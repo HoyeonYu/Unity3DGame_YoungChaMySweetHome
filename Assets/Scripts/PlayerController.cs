@@ -18,9 +18,13 @@ public class PlayerController : MonoBehaviour
     private Camera theCamera;
     private Rigidbody myRigid;
 
+    GameObject CoinLED;
+
     void Start()
     {
         myRigid = GetComponent<Rigidbody>();
+        CoinLED = GameObject.Find("CoinLED");
+        CoinLED.SetActive(false);
     }
 
     void Update()
@@ -58,5 +62,13 @@ public class PlayerController : MonoBehaviour
         float _yRotation = Input.GetAxisRaw("Mouse X");
         Vector3 _characterRotationY = new Vector3(0f, _yRotation, 0f) * lookSensitivity;
         myRigid.MoveRotation(myRigid.rotation * Quaternion.Euler(_characterRotationY));
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bank")
+        {
+            CoinLED.SetActive(true);
+        }
     }
 }
