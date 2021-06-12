@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
