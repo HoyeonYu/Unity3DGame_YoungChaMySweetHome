@@ -1,0 +1,131 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.6f1 (8a2143876886) revision 9052483'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Enterprise; OS build 19041.985; Version 2004; 64bit' Language: 'ko' Physical Memory: 32694 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/study/Unity/FinalProject_20191025
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55168
+Successfully changed project path to: D:/study/Unity/FinalProject_20191025
+D:/study/Unity/FinalProject_20191025
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 14.90 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.6f1 (8a2143876886)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/study/Unity/FinalProject_20191025/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2484)
+    Vendor:   
+    VRAM:     8043 MB
+    Driver:   27.21.14.6589
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002028 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 15.09 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.737 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000396 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.526 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1103 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 56.7 MB.
+System memory in use after: 56.7 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1544.
+Total: 1.494900 ms (FindLiveObjects: 0.138800 ms CreateObjectMapping: 0.030000 ms MarkObjects: 1.264400 ms  DeleteObjects: 0.060700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Assets/apple.fbx
+  artifactKey: Guid(c2c00351f4551e444a5ae79f4c331c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/apple.fbx using Guid(c2c00351f4551e444a5ae79f4c331c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73ac022eeed1bec6dd5608a36c7d6622') in 0.273867 seconds
+  Import took 0.275620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Assets
+  artifactKey: Guid(a66d0eac48086824f84851811f605fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets using Guid(a66d0eac48086824f84851811f605fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b25e2c450a13a463fff1d6e9d3f029cf') in 0.001656 seconds
+  Import took 0.002789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000128 seconds.
+  path: Assets/Assets/get.mp3
+  artifactKey: Guid(c5d6ace52774ceb41a77a8107da6f1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/get.mp3 using Guid(c5d6ace52774ceb41a77a8107da6f1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f2c9ef82407c5218096661164963e8b') in 0.022511 seconds
+  Import took 0.023771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Assets/damage.mp3
+  artifactKey: Guid(d7aa98242c5462d418243bde90df3821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/damage.mp3 using Guid(d7aa98242c5462d418243bde90df3821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdc7c7ffcc43938eacaac0b5bf2734d0') in 0.005695 seconds
+  Import took 0.006659 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/Assets/bomb.fbx
+  artifactKey: Guid(c68d468ed3e6a6d439bdcc3b3755854e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/bomb.fbx using Guid(c68d468ed3e6a6d439bdcc3b3755854e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ab4a4227314a35fddbf96710f0a6a56') in 0.020436 seconds
+  Import took 0.021816 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Assets/stage.fbx
+  artifactKey: Guid(3f1d0edb01306164cb4a607eec4e2deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/stage.fbx using Guid(3f1d0edb01306164cb4a607eec4e2deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dac6bedd4503da42c11ade1e880291ad') in 0.014762 seconds
+  Import took 0.015883 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Assets/basket.fbx
+  artifactKey: Guid(004a6ebaba100094c8868725bf9130b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/basket.fbx using Guid(004a6ebaba100094c8868725bf9130b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d78192681e962be5eb69855bac37e8f') in 0.011229 seconds
+  Import took 0.012373 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
