@@ -28,9 +28,7 @@ public class GameDirector : MonoBehaviour
 
     public void OnBankCanvasCloseClick()
     {
-        Debug.Log("OnBankCanvasCloseClick");
         BankCanvas.SetActive(false);
-        Debug.Log("SetActive");
     }
 
     public void OnCoinCanvasOpenClick()

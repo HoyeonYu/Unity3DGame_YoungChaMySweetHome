@@ -15,17 +15,15 @@ public class PlayerController : MonoBehaviour
     private float currentCameraRotationX;
 
     [SerializeField]
-    private Camera theCamera;
-    private Rigidbody myRigid;
+    private Camera camera;
+    private Rigidbody rigidbody;
 
     GameObject director;
 
     void Start()
     {
-        myRigid = GetComponent<Rigidbody>();
-
-        director = GameObject.Find("GameDirector");
-        director.GetComponent<GameDirector>().BankCanvas.SetActive(false);
+        rigidbody = GetComponent<Rigidbody>();
+        director = GameObject.Find("GameDirector"); 
     }
 
     void Update()
@@ -37,32 +35,32 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        float _moveDirX = Input.GetAxisRaw("Horizontal");
-        float _moveDirZ = Input.GetAxisRaw("Vertical");
-        Vector3 _moveHorizontal = transform.right * _moveDirX;
-        Vector3 _moveVertical = transform.forward * _moveDirZ;
+        float moveDirX = Input.GetAxisRaw("Horizontal");
+        float moveDirZ = Input.GetAxisRaw("Vertical");
+        Vector3 moveHorizontal = transform.right * moveDirX;
+        Vector3 moveVertical = transform.forward * moveDirZ;
 
-        Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized * walkSpeed;
+        Vector3 velocity = (moveHorizontal + moveVertical).normalized * walkSpeed;
 
-        myRigid.MovePosition(transform.position + _velocity * Time.deltaTime);
+        rigidbody.MovePosition(transform.position + velocity * Time.deltaTime);
     }
 
     private void CameraRotation()
     {
-        float _xRotation = Input.GetAxisRaw("Mouse Y");
-        float _cameraRotationX = _xRotation * lookSensitivity;
+        float xRotation = Input.GetAxisRaw("Mouse Y");
+        float cameraRotationX = xRotation * lookSensitivity;
 
-        currentCameraRotationX -= _cameraRotationX;
+        currentCameraRotationX -= cameraRotationX;
         currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
 
-        theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
+        camera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
 
     private void CharacterRotation()
     {
-        float _yRotation = Input.GetAxisRaw("Mouse X");
-        Vector3 _characterRotationY = new Vector3(0f, _yRotation, 0f) * lookSensitivity;
-        myRigid.MoveRotation(myRigid.rotation * Quaternion.Euler(_characterRotationY));
+        float yRotation = Input.GetAxisRaw("Mouse X");
+        Vector3 characterRotationY = new Vector3(0f, yRotation, 0f) * lookSensitivity;
+        rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(characterRotationY)); 
     }
 
     private void OnCollisionEnter(Collision collision)

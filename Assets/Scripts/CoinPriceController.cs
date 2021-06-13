@@ -58,39 +58,39 @@ public class CoinPriceController : MonoBehaviour
 
     void ChangePrice()
     {
-        float rate = Random.RandomRange(-0.1f, 0.1f);
+        float rate = Random.Range(-0.1f, 0.1f);
         HTCPrice += (int)(HTCPrice * rate);
         HTCText.GetComponent<Text>().text = "₩ " + HTCPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
 
-        rate = Random.RandomRange(-0.3f, 0.3f);
+        rate = Random.Range(-0.3f, 0.3f);
         ATHPrice += (int)(ATHPrice * rate);
         ATHText.GetComponent<Text>().text = "₩ " + ATHPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
 
-        rate = Random.RandomRange(-0.2f, 0.2f);
+        rate = Random.Range(-0.2f, 0.2f);
         HNBPrice += (int)(HNBPrice * rate);
         HNBText.GetComponent<Text>().text = "₩ " + HNBPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
 
-        rate = Random.RandomRange(-0.2f, 0.2f);
+        rate = Random.Range(-0.2f, 0.2f);
         XBPPrice += (int)(XBPPrice * rate);
         XBPText.GetComponent<Text>().text = "₩ " + XBPPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
 
-        rate = Random.RandomRange(-0.05f, 0.1f);
+        rate = Random.Range(-0.05f, 0.1f);
         IDAPrice += (int)(IDAPrice * rate);
         IDAText.GetComponent<Text>().text = "₩ " + IDAPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
 
-        rate = Random.RandomRange(-0.4f, 0.3f);
+        rate = Random.Range(-0.4f, 0.3f);
         GSMPrice += (int)(GSMPrice * rate);
         GSMText.GetComponent<Text>().text = "₩ " + GSMPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
 
-        rate = Random.RandomRange(-0.5f, 0.2f);
+        rate = Random.Range(-0.5f, 0.2f);
         COTPrice += (int)(COTPrice * rate);
         COTText.GetComponent<Text>().text = "₩ " + COTPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
 
-        rate = Random.RandomRange(-0.2f, 0.3f);
+        rate = Random.Range(-0.2f, 0.3f);
         HVCPrice += (int)(HVCPrice * rate);
         HVCText.GetComponent<Text>().text = "₩ " + HVCPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
 
-        rate = Random.RandomRange(-0.3f, 0.4f);
+        rate = Random.Range(-0.3f, 0.4f);
         CATPrice += (int)(CATPrice * rate);
         CATText.GetComponent<Text>().text = "₩ " + CATPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
     }
