@@ -12,6 +12,7 @@ public class GameDirector : MonoBehaviour
         MyAssetsCanvas.SetActive(true);
 
         BankCanvas = GameObject.Find("BankCanvas");
+        BankCanvas.SetActive(false);
 
         CoinCanvas = GameObject.Find("CoinCanvas");
         CoinCanvas.SetActive(false);
@@ -27,7 +28,9 @@ public class GameDirector : MonoBehaviour
 
     public void OnBankCanvasCloseClick()
     {
+        Debug.Log("OnBankCanvasCloseClick");
         BankCanvas.SetActive(false);
+        Debug.Log("SetActive");
     }
 
     public void OnCoinCanvasOpenClick()

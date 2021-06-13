@@ -18,14 +18,14 @@ public class PlayerController : MonoBehaviour
     private Camera theCamera;
     private Rigidbody myRigid;
 
-    GameObject BankCanvas;
+    GameObject director;
 
     void Start()
     {
         myRigid = GetComponent<Rigidbody>();
 
-        BankCanvas = GameObject.Find("BankCanvas");
-        BankCanvas.SetActive(false);
+        director = GameObject.Find("GameDirector");
+        director.GetComponent<GameDirector>().BankCanvas.SetActive(false);
     }
 
     void Update()
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
             if (!director.GetComponent<GameDirector>().CoinCanvas.active &&
                 !director.GetComponent<GameDirector>().RealEstateCanvas.active)
             {
-                BankCanvas.SetActive(true);
+                director.GetComponent<GameDirector>().BankCanvas.SetActive(true);
             }
         }
     }
