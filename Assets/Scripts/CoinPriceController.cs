@@ -12,7 +12,7 @@ public class CoinPriceController : MonoBehaviour
     GameObject HTCText, ATHText, HNBText, XBPText,
         IDAText, GSMText, COTText, HVCText, CATText;
 
-    GameObject currentTimeText;
+    GameObject CoinCurrentTimeText;
 
     float span = 2.0f;
     float delta = 0;
@@ -29,7 +29,7 @@ public class CoinPriceController : MonoBehaviour
         HVCText = GameObject.Find("HVCText");
         CATText = GameObject.Find("CATText");
 
-        currentTimeText = GameObject.Find("CurrentTimeText");
+        CoinCurrentTimeText = GameObject.Find("CoinCurrentTimeText");
     }
 
     void Update()
@@ -42,17 +42,17 @@ public class CoinPriceController : MonoBehaviour
             ChangePrice();
         }
 
-        currentTimeText.GetComponent<Text>().text = "현재시각: " + 
+        CoinCurrentTimeText.GetComponent<Text>().text = "현재시각: " + 
             System.DateTime.Now.ToString(("yyyy-MM-dd HH:mm:ss tt"));
 
         if ((int.Parse(System.DateTime.Now.ToString("ss")) / 10) % 2 == 0)
         {
-            currentTimeText.GetComponent<Text>().text += ", 거래 가능 시간";
+            CoinCurrentTimeText.GetComponent<Text>().text += ", 거래 가능 시간";
         }
 
         else
         {
-            currentTimeText.GetComponent<Text>().text += ", 거래 불가 시간";
+            CoinCurrentTimeText.GetComponent<Text>().text += ", 거래 불가 시간";
         }
     }
 

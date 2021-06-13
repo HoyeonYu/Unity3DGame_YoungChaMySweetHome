@@ -56,9 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CoinPriceController.cs" />
-    <Compile Include="Assets\Scripts\CoinLEDCloseBtn.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\CoinCanvasCloseBtn.cs" />
+    <Compile Include="Assets\Scripts\RealEstateCloseBtn.cs" />
+    <Compile Include="Assets\Scripts\GameDirector.cs" />
+    <Compile Include="Assets\Scripts\CoinCanvasOpenBtn.cs" />
+    <Compile Include="Assets\Scripts\RealEstateOpenBtn.cs" />
+    <Compile Include="Assets\Scripts\BankCanvasCloseBtn.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />

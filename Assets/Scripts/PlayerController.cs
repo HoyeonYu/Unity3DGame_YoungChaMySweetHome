@@ -18,13 +18,14 @@ public class PlayerController : MonoBehaviour
     private Camera theCamera;
     private Rigidbody myRigid;
 
-    GameObject CoinLED;
+    GameObject BankCanvas;
 
     void Start()
     {
         myRigid = GetComponent<Rigidbody>();
-        CoinLED = GameObject.Find("CoinLED");
-        CoinLED.SetActive(false);
+
+        BankCanvas = GameObject.Find("BankCanvas");
+        BankCanvas.SetActive(false);
     }
 
     void Update()
@@ -68,7 +69,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bank")
         {
-            CoinLED.SetActive(true);
+            GameObject director = GameObject.Find("GameDirector");
+            if (!director.GetComponent<GameDirector>().CoinCanvas.active &&
+                !director.GetComponent<GameDirector>().RealEstateCanvas.active)
+            {
+                BankCanvas.SetActive(true);
+            }
         }
     }
 }
