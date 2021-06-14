@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameDirector : MonoBehaviour
 {
-    public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull, 
-        BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas;
+    static public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull;
+    public GameObject BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas;
 
     static public bool isPlayerFixed;
 

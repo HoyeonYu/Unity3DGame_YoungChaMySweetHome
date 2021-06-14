@@ -112,14 +112,16 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplanePropellerAnimator.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\AlphaButtonClickMask.cs" />
+    <Compile Include="Assets\Scripts\PlayerTargetPositionController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerNavAgentController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\CarController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SmoothFollow.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\AutoMoveAndRotate.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FOVKick.cs" />
+    <Compile Include="Assets\Scripts\InfoCanvasController.cs" />
     <Compile Include="Assets\Scripts\GameDirector.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplaneController.cs" />
@@ -165,9 +167,7 @@
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Scripts\InfoCanvasController.cs" />
-    <Compile Include="Assets\Scripts\PlayerTargetPositionController.cs" />
-    <Compile Include="Assets\Scripts\PlayerNavAgentController.cs" />
+    <Compile Include="Assets\Scripts\PlayerControl.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

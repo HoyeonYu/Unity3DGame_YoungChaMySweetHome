@@ -7,7 +7,7 @@ public class CoinPriceController : MonoBehaviour
 {
     static public int[] coinPriceInt;
     private float[] coinDiffRate;
-    GameObject[] coinPriceText;
+    GameObject[] coinDealBtn, coinPriceText;
     GameObject coinCurrentTimeText;
 
     float span = 2.0f;
@@ -17,35 +17,51 @@ public class CoinPriceController : MonoBehaviour
     {
         coinPriceInt = new int[9] { 8000, 400, 98000, 20, 900, 300, 800, 100000, 200 };
         coinDiffRate = new float[9];
+        coinDealBtn = new GameObject[9];
         coinPriceText = new GameObject[9];
 
         coinCurrentTimeText = GameObject.Find("CoinCurrentTimeText");
 
         for (int i = 0; i < 9; i++)
         {
-            coinPriceText[i] = GameObject.Find("CoinTxt_" + i.ToString());
-            coinPriceText[i].GetComponent<Text>().text = "₩ " + coinPriceInt[i].ToString();
+            coinDealBtn[i] = GameObject.Find("CoinBtn_" + i);
+
+            coinPriceText[i] = GameObject.Find("CoinTxt_" + i);
+            coinPriceText[i].GetComponent<Text>().text = "₩ " + coinPriceInt[i];
         }
     }
 
     void Update()
     {
-        delta += Time.deltaTime;
-
-        if (delta > span)
-        {
-            delta = 0;
-            ChangePrice();
-        }
-
-        coinCurrentTimeText.GetComponent<Text>().text = "현재시각: " + 
+        coinCurrentTimeText.GetComponent<Text>().text = "현재시각: " +
             System.DateTime.Now.ToString(("yyyy-MM-dd HH:mm:ss tt"));
 
         string isDealAvailable = ", 거래 가능 시간";
 
+        for (int i = 0; i < 9; i++)
+        {
+            coinDealBtn[i].GetComponent<Button>().interactable = true;
+        }
+
         if ((int.Parse(System.DateTime.Now.ToString("ss")) / 10) % 2 != 0)
         {
             isDealAvailable = ", 거래 불가 시간";
+
+            for (int i = 0; i < 9; i++)
+            {
+                coinDealBtn[i].GetComponent<Button>().interactable = false;
+            }
+        }
+
+        else
+        {
+            delta += Time.deltaTime;
+
+            if (delta > span)
+            {
+                delta = 0;
+                ChangePrice();
+            }
         }
 
         coinCurrentTimeText.GetComponent<Text>().text += isDealAvailable;

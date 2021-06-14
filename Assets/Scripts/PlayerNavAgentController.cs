@@ -44,11 +44,12 @@ public class PlayerNavAgentController : MonoBehaviour
         cam.transform.localEulerAngles = new Vector3(currentRotX, -currentRotY, 0f);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Bank")
+        if (collider.gameObject.tag == "Bank")
         {
             GameObject director = GameObject.Find("GameDirector");
+
             if (!(director.GetComponent<GameDirector>().RealEstateCanvas.active ||
                 director.GetComponent<GameDirector>().CoinCanvas.active ||
                 director.GetComponent<GameDirector>().CoinDealCanvas.active))
