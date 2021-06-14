@@ -5,31 +5,27 @@ using UnityEngine.UI;
 
 public class CoinPriceController : MonoBehaviour
 {
-    [SerializeField]
-    private int HTCPrice, ATHPrice, HNBPrice, XBPPrice,
-        IDAPrice, GSMPrice, COTPrice, HVCPrice, CATPrice;
-
-    GameObject HTCText, ATHText, HNBText, XBPText,
-        IDAText, GSMText, COTText, HVCText, CATText;
-
-    GameObject CoinCurrentTimeText;
+    static public int[] coinPriceInt;
+    private float[] coinDiffRate;
+    GameObject[] coinPriceText;
+    GameObject coinCurrentTimeText;
 
     float span = 2.0f;
     float delta = 0;
 
     void Start()
     {
-        HTCText = GameObject.Find("HTCText");
-        ATHText = GameObject.Find("ATHText");
-        HNBText = GameObject.Find("HNBText");
-        XBPText = GameObject.Find("XBPText");
-        IDAText = GameObject.Find("IDAText");
-        GSMText = GameObject.Find("GSMText");
-        COTText = GameObject.Find("COTText");
-        HVCText = GameObject.Find("HVCText");
-        CATText = GameObject.Find("CATText");
+        coinPriceInt = new int[9] { 8000, 400, 98000, 20, 900, 300, 800, 100000, 200 };
+        coinDiffRate = new float[9];
+        coinPriceText = new GameObject[9];
 
-        CoinCurrentTimeText = GameObject.Find("CoinCurrentTimeText");
+        coinCurrentTimeText = GameObject.Find("CoinCurrentTimeText");
+
+        for (int i = 0; i < 9; i++)
+        {
+            coinPriceText[i] = GameObject.Find("CoinTxt_" + i.ToString());
+            coinPriceText[i].GetComponent<Text>().text = "₩ " + coinPriceInt[i].ToString();
+        }
     }
 
     void Update()
@@ -42,56 +38,36 @@ public class CoinPriceController : MonoBehaviour
             ChangePrice();
         }
 
-        CoinCurrentTimeText.GetComponent<Text>().text = "현재시각: " + 
+        coinCurrentTimeText.GetComponent<Text>().text = "현재시각: " + 
             System.DateTime.Now.ToString(("yyyy-MM-dd HH:mm:ss tt"));
 
-        if ((int.Parse(System.DateTime.Now.ToString("ss")) / 10) % 2 == 0)
+        string isDealAvailable = ", 거래 가능 시간";
+
+        if ((int.Parse(System.DateTime.Now.ToString("ss")) / 10) % 2 != 0)
         {
-            CoinCurrentTimeText.GetComponent<Text>().text += ", 거래 가능 시간";
+            isDealAvailable = ", 거래 불가 시간";
         }
 
-        else
-        {
-            CoinCurrentTimeText.GetComponent<Text>().text += ", 거래 불가 시간";
-        }
+        coinCurrentTimeText.GetComponent<Text>().text += isDealAvailable;
     }
 
     void ChangePrice()
     {
-        float rate = Random.Range(-0.1f, 0.1f);
-        HTCPrice += (int)(HTCPrice * rate);
-        HTCText.GetComponent<Text>().text = "₩ " + HTCPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
+        coinDiffRate[0] = Random.Range(-0.1f, 0.1f);
+        coinDiffRate[1] = Random.Range(-0.3f, 0.3f);
+        coinDiffRate[2] = Random.Range(-0.2f, 0.2f);
+        coinDiffRate[3] = Random.Range(-0.2f, 0.2f);
+        coinDiffRate[4] = Random.Range(-0.05f, 0.1f);
+        coinDiffRate[5] = Random.Range(-0.4f, 0.3f);
+        coinDiffRate[6] = Random.Range(-0.3f, 0.2f);
+        coinDiffRate[7] = Random.Range(-0.2f, 0.3f);
+        coinDiffRate[8] = Random.Range(-0.3f, 0.4f);
 
-        rate = Random.Range(-0.3f, 0.3f);
-        ATHPrice += (int)(ATHPrice * rate);
-        ATHText.GetComponent<Text>().text = "₩ " + ATHPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
-
-        rate = Random.Range(-0.2f, 0.2f);
-        HNBPrice += (int)(HNBPrice * rate);
-        HNBText.GetComponent<Text>().text = "₩ " + HNBPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
-
-        rate = Random.Range(-0.2f, 0.2f);
-        XBPPrice += (int)(XBPPrice * rate);
-        XBPText.GetComponent<Text>().text = "₩ " + XBPPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
-
-        rate = Random.Range(-0.05f, 0.1f);
-        IDAPrice += (int)(IDAPrice * rate);
-        IDAText.GetComponent<Text>().text = "₩ " + IDAPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
-
-        rate = Random.Range(-0.4f, 0.3f);
-        GSMPrice += (int)(GSMPrice * rate);
-        GSMText.GetComponent<Text>().text = "₩ " + GSMPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
-
-        rate = Random.Range(-0.5f, 0.2f);
-        COTPrice += (int)(COTPrice * rate);
-        COTText.GetComponent<Text>().text = "₩ " + COTPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
-
-        rate = Random.Range(-0.2f, 0.3f);
-        HVCPrice += (int)(HVCPrice * rate);
-        HVCText.GetComponent<Text>().text = "₩ " + HVCPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
-
-        rate = Random.Range(-0.3f, 0.4f);
-        CATPrice += (int)(CATPrice * rate);
-        CATText.GetComponent<Text>().text = "₩ " + CATPrice.ToString() + " (" + (rate * 100).ToString("F2") + "%)";
+        for (int i = 0; i < 9; i++)
+        {
+            coinPriceInt[i] += (int)(coinPriceInt[i] * coinDiffRate[i]);
+            coinPriceText[i].GetComponent<Text>().text = "₩ " + coinPriceInt[i].ToString() 
+                + " (" + (coinDiffRate[i] * 100).ToString("F2") + "%)";
+        }
     }
 }

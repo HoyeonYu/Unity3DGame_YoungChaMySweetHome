@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameDirector : MonoBehaviour
 {
-    public GameObject MyAssetsCanvas, BankCanvas, CoinCanvas, RealEstateCanvas;
+    public GameObject MyAssetsCanvas, BankCanvas, RealEstateCanvas,
+        CoinCanvas, CoinDealCanvas;
 
     void Start()
     {
@@ -14,21 +15,36 @@ public class GameDirector : MonoBehaviour
         BankCanvas = GameObject.Find("BankCanvas");
         BankCanvas.SetActive(false);
 
+        RealEstateCanvas = GameObject.Find("RealEstateCanvas");
+        RealEstateCanvas.SetActive(false);
+
         CoinCanvas = GameObject.Find("CoinCanvas");
         CoinCanvas.SetActive(false);
 
-        RealEstateCanvas = GameObject.Find("RealEstateCanvas");
-        RealEstateCanvas.SetActive(false);
+        CoinDealCanvas = GameObject.Find("CoinDealCanvas");
+        CoinDealCanvas.SetActive(false);
     }
 
     void Update()
     {
-        MyAssetsCanvas.SetActive(!(BankCanvas.active || RealEstateCanvas.active || CoinCanvas.active));
+        MyAssetsCanvas.SetActive(!(BankCanvas.active || RealEstateCanvas.active || CoinCanvas.active
+            || CoinDealCanvas.active));
     }
 
     public void OnBankCanvasCloseClick()
     {
         BankCanvas.SetActive(false);
+    }
+
+    public void OnRealEstateCanvasOpenClick()
+    {
+        RealEstateCanvas.SetActive(true);
+        BankCanvas.SetActive(false);
+    }
+
+    public void OnRealEstateCanvasCloseClick()
+    {
+        RealEstateCanvas.SetActive(false);
     }
 
     public void OnCoinCanvasOpenClick()
@@ -42,14 +58,14 @@ public class GameDirector : MonoBehaviour
         CoinCanvas.SetActive(false);
     }
 
-    public void OnRealEstateCanvasOpenClick()
+    public void OnCoinDealCanvasOpenClick()
     {
-        RealEstateCanvas.SetActive(true);
-        BankCanvas.SetActive(false);
+        CoinCanvas.SetActive(false);
+        CoinDealCanvas.SetActive(true);
     }
 
-    public void OnRealEstateCanvasCloseClick()
+    public void OnCoinDealCanvasCloseClick()
     {
-        RealEstateCanvas.SetActive(false);
+        CoinDealCanvas.SetActive(false);
     }
 }
