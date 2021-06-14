@@ -4,63 +4,54 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float walkSpeed;
+    public Rigidbody playerRigidbody;
+    public Camera fpsCam;
 
     [SerializeField]
-    private float lookSensitivity;
-
-    [SerializeField]
-    private float cameraRotationLimit;
-    private float currentCameraRotationX;
-
-    [SerializeField]
-    private Camera camera;
-    private Rigidbody rigidbody;
+    float MoveSpeed;
+    float rotSpeed;
+    float currentRot;
 
     GameObject director;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
-        director = GameObject.Find("GameDirector"); 
+        MoveSpeed = 10.0f;
+        rotSpeed = 3.0f;
+        currentRot = 0f;
     }
 
     void Update()
     {
-        Move();
-        CameraRotation(); 
-        CharacterRotation();
+        if (!GameDirector.isPlayerFixed)
+        {
+            PlayerMove();
+            RotationControl();
+        }
     }
 
-    private void Move()
+    void PlayerMove()
     {
-        float moveDirX = Input.GetAxisRaw("Horizontal");
-        float moveDirZ = Input.GetAxisRaw("Vertical");
-        Vector3 moveHorizontal = transform.right * moveDirX;
-        Vector3 moveVertical = transform.forward * moveDirZ;
+        float xInput = Input.GetAxis("Horizontal");
+        float zInput = Input.GetAxis("Vertical");
 
-        Vector3 velocity = (moveHorizontal + moveVertical).normalized * walkSpeed;
+        float xSpeed = xInput * MoveSpeed;
+        float zSpeed = zInput * MoveSpeed;
 
-        rigidbody.MovePosition(transform.position + velocity * Time.deltaTime);
+        transform.Translate(Vector3.forward * zSpeed * Time.deltaTime);
+        transform.Translate(Vector3.right * xSpeed * Time.deltaTime);
     }
 
-    private void CameraRotation()
+    void RotationControl()
     {
-        float xRotation = Input.GetAxisRaw("Mouse Y");
-        float cameraRotationX = xRotation * lookSensitivity;
+        float rotX = Input.GetAxis("Mouse Y") * rotSpeed;
+        float rotY = Input.GetAxis("Mouse X") * rotSpeed;
 
-        currentCameraRotationX -= cameraRotationX;
-        currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
+        currentRot -= rotX;
+        currentRot = Mathf.Clamp(currentRot, -50f, 50f);
 
-        camera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
-    }
-
-    private void CharacterRotation()
-    {
-        float yRotation = Input.GetAxisRaw("Mouse X");
-        Vector3 characterRotationY = new Vector3(0f, yRotation, 0f) * lookSensitivity;
-        rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(characterRotationY)); 
+        this.transform.localRotation *= Quaternion.Euler(0, rotY, 0);
+        fpsCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -73,6 +64,7 @@ public class PlayerController : MonoBehaviour
                 director.GetComponent<GameDirector>().CoinDealCanvas.active))
             {
                 director.GetComponent<GameDirector>().BankCanvas.SetActive(true);
+                GameDirector.isPlayerFixed = true;
             }
         }
     }

@@ -62,6 +62,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplaneUserControl4Axis.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\DragRigidbody.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\Scripts\MyAssetsGetFoldBtn.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplaneAudio.cs" />
     <Compile Include="Assets\Scripts\CoinBuyBtn.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
+    <Compile Include="Assets\Scripts\MyAssetsGetFullBtn.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
@@ -163,8 +165,9 @@
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Scripts\MyAssetsGetFullBtn.cs" />
-    <Compile Include="Assets\Scripts\MyAssetsGetFoldBtn.cs" />
+    <Compile Include="Assets\Scripts\InfoCanvasController.cs" />
+    <Compile Include="Assets\Scripts\PlayerTargetPositionController.cs" />
+    <Compile Include="Assets\Scripts\PlayerNavAgentController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

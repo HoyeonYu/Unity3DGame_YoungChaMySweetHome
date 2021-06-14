@@ -7,6 +7,8 @@ public class GameDirector : MonoBehaviour
     public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull, 
         BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas;
 
+    static public bool isPlayerFixed;
+
     void Start()
     {
         MyAssetsCanvasFold = GameObject.Find("MyAssetsCanvasFold");
@@ -26,6 +28,8 @@ public class GameDirector : MonoBehaviour
 
         CoinDealCanvas = GameObject.Find("CoinDealCanvas");
         CoinDealCanvas.SetActive(false);
+
+        isPlayerFixed = false;
     }
 
     void Update()
@@ -40,50 +44,59 @@ public class GameDirector : MonoBehaviour
     public void OnBankCanvasCloseClick()
     {
         BankCanvas.SetActive(false);
+        isPlayerFixed = false;
     }
 
     public void OnRealEstateCanvasOpenClick()
     {
         RealEstateCanvas.SetActive(true);
         BankCanvas.SetActive(false);
+        isPlayerFixed = true;
     }
 
     public void OnRealEstateCanvasCloseClick()
     {
         RealEstateCanvas.SetActive(false);
+        isPlayerFixed = false;
     }
 
     public void OnCoinCanvasOpenClick()
     {
         CoinCanvas.SetActive(true);
         BankCanvas.SetActive(false);
+        isPlayerFixed = true;
     }
 
     public void OnCoinCanvasCloseClick()
     {
         CoinCanvas.SetActive(false);
+        isPlayerFixed = false;
     }
 
     public void OnCoinDealCanvasOpenClick()
     {
         CoinCanvas.SetActive(false);
         CoinDealCanvas.SetActive(true);
+        isPlayerFixed = true;
     }
 
     public void OnCoinDealCanvasCloseClick()
     {
         CoinDealCanvas.SetActive(false);
+        isPlayerFixed = false;
     }
 
     public void OnCoinGetFullAssetsCanvasClick()
     {
         MyAssetsCanvasFold.SetActive(false);
         MyAssetsCanvasFull.SetActive(true);
+        isPlayerFixed = false;
     }
 
     public void OnCoinGetFoldAssetsCanvasClick()
     {
         MyAssetsCanvasFull.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
+        isPlayerFixed = false;
     }
 }
