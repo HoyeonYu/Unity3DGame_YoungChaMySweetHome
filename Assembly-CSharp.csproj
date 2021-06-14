@@ -75,6 +75,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\Explosive.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\Scripts\SuperMarketBuyBtn.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Cameras\Scripts\TargetFieldOfView.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\DynamicShadowSettings.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleMouseRotator.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FOVKick.cs" />
     <Compile Include="Assets\Scripts\InfoCanvasController.cs" />
     <Compile Include="Assets\Scripts\GameDirector.cs" />
+    <Compile Include="Assets\Scripts\SuperMarketController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplaneController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
@@ -136,6 +138,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\CarUserControl.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplaneUserControl2Axis.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
+    <Compile Include="Assets\Scripts\SuperMarketCloseBtn.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\EventSystemChecker.cs" />
@@ -168,9 +171,7 @@
     <Compile Include="Assets\Scripts\BuildingSignContoller.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Scripts\SuperMarketController.cs" />
-    <Compile Include="Assets\Scripts\SuperMarketBuyBtn.cs" />
-    <Compile Include="Assets\Scripts\SuperMarketCloseBtn.cs" />
+    <Compile Include="Assets\Scripts\MyHealthController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

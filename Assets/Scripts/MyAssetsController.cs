@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MyAssetsController : MonoBehaviour
 {
-    static public int cash, house, car, hungryValue, happyValue;
+    static public int cash, house, car;
     static public int[] coin;
     GameObject myAssetsFoldText, myAssetsFullText;
     string[] coinNameArr;
@@ -30,17 +30,34 @@ public class MyAssetsController : MonoBehaviour
 
     public void Update()
     {
-        string showText = "내 자산\n\n";
-        showText += "   현금: " + cash + "원\n";
-        showText += "   집: " + house + "채\n";
-        showText += "   자동차: " + car + "대\n";
-        showText += "   코인: ";
+        string showText = "자산\n\n";
+        showText += "  - 현금:\t\t" + cash + "원\n";
+        showText += "  - 집:\t\t\t" + house + "채\n";
+        showText += "  - 자동차:\t" + car + "대\n";
+        showText += "  - 코인: ";
 
         myAssetsFoldText.GetComponent<Text>().text = showText;
 
+        string tab = "";
+
         for (int i = 0; i < 9; i++)
         {
-            showText += "\n    - " + coinNameArr[i] + ": " + coin[i] + "개";
+            if (i == 3)
+            {
+                tab = "\t\t";
+            }
+
+            else if (i == 5 || i == 6)
+            {
+                tab = "\t";
+            }
+
+            else
+            {
+                tab = "";
+            }
+
+            showText += "\n    - " + coinNameArr[i] + ":\t" + tab + "  " + coin[i] + "개";
         }
 
         myAssetsFullText.GetComponent<Text>().text = showText;

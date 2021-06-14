@@ -109,7 +109,6 @@ public class GameDirector : MonoBehaviour
     {
         MyAssetsCanvasFull.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
-        isPlayerFixed = false;
     }
 
     public void OnSuperMarketCanvasCloseClick()

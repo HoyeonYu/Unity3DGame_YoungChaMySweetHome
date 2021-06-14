@@ -31,7 +31,7 @@ public class CoinSellBtn : MonoBehaviour
 
                 GameObject director = GameObject.Find("GameDirector");
                 director.GetComponent<GameDirector>().OnCoinDealCanvasCloseClick();
-                InfoCanvasController.infoTxtdelta = 0;
+                InfoCanvasController.infoDealTxtdelta = 0;
             }
         }
     }

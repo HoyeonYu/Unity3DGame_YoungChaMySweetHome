@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerTargetPositionController : MonoBehaviour
 {
@@ -14,8 +15,11 @@ public class PlayerTargetPositionController : MonoBehaviour
             {
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    targetPos = new Vector3(hit.point.x, 18f, hit.point.z);
-                    transform.position = targetPos;
+                    if (!EventSystem.current.IsPointerOverGameObject())
+                    {
+                        targetPos = new Vector3(hit.point.x, 18f, hit.point.z);
+                        transform.position = targetPos;
+                    }
                 }
             }
         }

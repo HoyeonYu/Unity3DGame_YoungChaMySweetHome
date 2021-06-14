@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class InfoCanvasController : MonoBehaviour
 {
     GameObject InfoCanvasTxt;
-    float infoTxtSpan = 2.0f;
-    static public float infoTxtdelta = 10;
+    float infoDealTxtSpan = 2.0f;
+    static public float infoDealTxtdelta = 10;
 
     void Start()
     {
@@ -18,12 +18,12 @@ public class InfoCanvasController : MonoBehaviour
     void Update()
     {
         InfoCanvasTxt.GetComponent<Text>().text = "거래 완료되었습니다.";
-        infoTxtdelta += Time.deltaTime;
+        infoDealTxtdelta += Time.deltaTime;
 
-        if (infoTxtdelta > infoTxtSpan)
+        if (infoDealTxtdelta > infoDealTxtSpan)
         {
             InfoCanvasTxt.GetComponent<Text>().text = "";
-            infoTxtdelta = 10;
+            infoDealTxtdelta = 10;
         }
     }
 }
