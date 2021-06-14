@@ -22,10 +22,11 @@ public class CoinDealInfoController : MonoBehaviour
             coinDealInfoText.GetComponent<Text>().text += "거래 가격 : " +
                 CoinDealCanvasOpenBtn.coinPrice + "원\n\n";
 
-            coinDealInfoText.GetComponent<Text>().text += "고객님의 현금 자산은 현재 " +
-               MyAssetsController.cash + "원으로," +
-               "\n최대 " + coinMaxAvailNum + "개까지 매수 가능하며," +
-               "\n최대 " + MyAssetsController.coin[CoinDealCanvasOpenBtn.coinIdx] + "개까지 매도 가능합니다.";
+            coinDealInfoText.GetComponent<Text>().text += 
+               "최대 매수 가능 수량: " + coinMaxAvailNum + "개\n" +
+               "최대 매도 가능 수량: " + MyAssetsController.coin[CoinDealCanvasOpenBtn.coinIdx] + "개";
+
+            coinDealInfoText.GetComponent<Text>().text += "\n\n매수 또는 매도 수량을 입력하세요";
 
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MyAssetsController : MonoBehaviour
 {
-    static public int cash, house, car;
+    static public int cash, house, car, hungryValue, happyValue;
     static public int[] coin;
     GameObject myAssetsFoldText, myAssetsFullText;
     string[] coinNameArr;

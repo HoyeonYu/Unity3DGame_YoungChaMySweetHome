@@ -7,7 +7,7 @@ public class InfoCanvasController : MonoBehaviour
 {
     GameObject InfoCanvasTxt;
     float infoTxtSpan = 2.0f;
-    static public float infoTxtdelta = 5;
+    static public float infoTxtdelta = 10;
 
     void Start()
     {
@@ -23,6 +23,7 @@ public class InfoCanvasController : MonoBehaviour
         if (infoTxtdelta > infoTxtSpan)
         {
             InfoCanvasTxt.GetComponent<Text>().text = "";
+            infoTxtdelta = 10;
         }
     }
 }

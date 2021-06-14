@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameDirector : MonoBehaviour
 {
     static public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull;
-    public GameObject BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas;
+    public GameObject BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas,
+        SuperMarketCanvas, CarRepairShopCanvas, CarShopCanvas;
 
     static public bool isPlayerFixed;
 
@@ -29,16 +30,27 @@ public class GameDirector : MonoBehaviour
         CoinDealCanvas = GameObject.Find("CoinDealCanvas");
         CoinDealCanvas.SetActive(false);
 
+        SuperMarketCanvas = GameObject.Find("SuperMarketCanvas");
+        SuperMarketCanvas.SetActive(false);
+
+        CarRepairShopCanvas = GameObject.Find("CarRepairShopCanvas");
+        CarRepairShopCanvas.SetActive(false);
+
+        CarShopCanvas = GameObject.Find("CarShopCanvas");
+        CarShopCanvas.SetActive(false);
+
         isPlayerFixed = false;
     }
 
     void Update()
     {
         MyAssetsCanvasFold.SetActive(!(BankCanvas.active || RealEstateCanvas.active
-            || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFull.active));
+            || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFull.active
+            || SuperMarketCanvas.active || CarRepairShopCanvas.active || CarShopCanvas.active));
 
         MyAssetsCanvasFull.SetActive(!(BankCanvas.active || RealEstateCanvas.active 
-            || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFold.active));
+            || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFold.active
+            || SuperMarketCanvas.active || CarRepairShopCanvas.active || CarShopCanvas.active));
     }
 
     public void OnBankCanvasCloseClick()
@@ -96,6 +108,20 @@ public class GameDirector : MonoBehaviour
     public void OnCoinGetFoldAssetsCanvasClick()
     {
         MyAssetsCanvasFull.SetActive(false);
+        MyAssetsCanvasFold.SetActive(true);
+        isPlayerFixed = false;
+    }
+
+    public void OnSuperMarketCanvasCloseClick()
+    {
+        SuperMarketCanvas.SetActive(false);
+        MyAssetsCanvasFold.SetActive(true);
+        isPlayerFixed = false;
+    }
+
+    public void OnSuperMarketCanvasBuyClick()
+    {
+        SuperMarketCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
     }

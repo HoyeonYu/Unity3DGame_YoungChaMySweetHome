@@ -79,11 +79,14 @@ public class CoinPriceController : MonoBehaviour
         coinDiffRate[7] = Random.Range(-0.2f, 0.3f);
         coinDiffRate[8] = Random.Range(-0.3f, 0.4f);
 
+
         for (int i = 0; i < 9; i++)
         {
+            string textColor = (coinDiffRate[i] > 0 ? "<color=#ff0505>" : "<color=#0000ff>");
+
             coinPriceInt[i] += (int)(coinPriceInt[i] * coinDiffRate[i]);
             coinPriceText[i].GetComponent<Text>().text = "₩ " + coinPriceInt[i].ToString() 
-                + " (" + (coinDiffRate[i] * 100).ToString("F2") + "%)";
+                + textColor + " (" + (coinDiffRate[i] * 100).ToString("F2") + "%)" + "</color>";
         }
     }
 }

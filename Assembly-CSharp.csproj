@@ -56,7 +56,6 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\CarAIControl.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
@@ -166,8 +165,12 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
     <Compile Include="Assets\Scripts\CoinDealCanvasCloseBtn.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-    <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\BuildingSignContoller.cs" />
+    <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
+    <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
+    <Compile Include="Assets\Scripts\SuperMarketController.cs" />
+    <Compile Include="Assets\Scripts\SuperMarketBuyBtn.cs" />
+    <Compile Include="Assets\Scripts\SuperMarketCloseBtn.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

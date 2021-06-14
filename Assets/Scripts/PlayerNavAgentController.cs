@@ -58,5 +58,38 @@ public class PlayerNavAgentController : MonoBehaviour
                 GameDirector.isPlayerFixed = true;
             }
         }
+
+        if (collider.gameObject.tag == "SuperMarket")
+        {
+            GameObject director = GameObject.Find("GameDirector");
+
+            if (!(director.GetComponent<GameDirector>().SuperMarketCanvas.active))
+            {
+                director.GetComponent<GameDirector>().SuperMarketCanvas.SetActive(true);
+                GameDirector.isPlayerFixed = true;
+            }
+        }
+
+        if (collider.gameObject.tag == "CarRepairShop")
+        {
+            GameObject director = GameObject.Find("GameDirector");
+
+            if (!(director.GetComponent<GameDirector>().CarRepairShopCanvas.active))
+            {
+                director.GetComponent<GameDirector>().CarRepairShopCanvas.SetActive(true);
+                GameDirector.isPlayerFixed = true;
+            }
+        }
+
+        if (collider.gameObject.tag == "CarShop")
+        {
+            GameObject director = GameObject.Find("GameDirector");
+
+            if (!(director.GetComponent<GameDirector>().CarShopCanvas.active))
+            {
+                director.GetComponent<GameDirector>().CarShopCanvas.SetActive(true);
+                GameDirector.isPlayerFixed = true;
+            }
+        }
     }
 }
