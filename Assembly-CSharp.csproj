@@ -63,6 +63,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\DragRigidbody.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplaneAudio.cs" />
+    <Compile Include="Assets\Scripts\CoinBuyBtn.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\DynamicShadowSettings.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleMouseRotator.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\CurveControlledBob.cs" />
+    <Compile Include="Assets\Scripts\CoinSellBtn.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FollowTarget.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\LerpControlledBob.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\TimedObjectActivator.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\BrakeLight.cs" />
+    <Compile Include="Assets\Scripts\MyAssetsController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\JetParticleEffect.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\CarUserControl.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplaneUserControl2Axis.cs" />
@@ -160,9 +163,8 @@
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Scripts\MyAssetsController.cs" />
-    <Compile Include="Assets\Scripts\CoinBuyBtn.cs" />
-    <Compile Include="Assets\Scripts\CoinSellBtn.cs" />
+    <Compile Include="Assets\Scripts\MyAssetsGetFullBtn.cs" />
+    <Compile Include="Assets\Scripts\MyAssetsGetFoldBtn.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

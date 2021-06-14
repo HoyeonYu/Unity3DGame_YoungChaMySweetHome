@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class GameDirector : MonoBehaviour
 {
-    public GameObject MyAssetsCanvas, BankCanvas, RealEstateCanvas,
-        CoinCanvas, CoinDealCanvas;
+    public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull, 
+        BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas;
 
     void Start()
     {
-        MyAssetsCanvas = GameObject.Find("MyAssetsCanvas");
-        MyAssetsCanvas.SetActive(true);
+        MyAssetsCanvasFold = GameObject.Find("MyAssetsCanvasFold");
+        MyAssetsCanvasFold.SetActive(true);
+
+        MyAssetsCanvasFull = GameObject.Find("MyAssetsCanvasFull");
+        MyAssetsCanvasFull.SetActive(false);
 
         BankCanvas = GameObject.Find("BankCanvas");
         BankCanvas.SetActive(false);
@@ -27,8 +30,11 @@ public class GameDirector : MonoBehaviour
 
     void Update()
     {
-        MyAssetsCanvas.SetActive(!(BankCanvas.active || RealEstateCanvas.active || CoinCanvas.active
-            || CoinDealCanvas.active));
+        MyAssetsCanvasFold.SetActive(!(BankCanvas.active || RealEstateCanvas.active
+            || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFull.active));
+
+        MyAssetsCanvasFull.SetActive(!(BankCanvas.active || RealEstateCanvas.active 
+            || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFold.active));
     }
 
     public void OnBankCanvasCloseClick()
@@ -67,5 +73,17 @@ public class GameDirector : MonoBehaviour
     public void OnCoinDealCanvasCloseClick()
     {
         CoinDealCanvas.SetActive(false);
+    }
+
+    public void OnCoinGetFullAssetsCanvasClick()
+    {
+        MyAssetsCanvasFold.SetActive(false);
+        MyAssetsCanvasFull.SetActive(true);
+    }
+
+    public void OnCoinGetFoldAssetsCanvasClick()
+    {
+        MyAssetsCanvasFull.SetActive(false);
+        MyAssetsCanvasFold.SetActive(true);
     }
 }
