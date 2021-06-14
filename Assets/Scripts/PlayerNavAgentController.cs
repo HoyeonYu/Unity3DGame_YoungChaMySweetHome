@@ -36,10 +36,10 @@ public class PlayerNavAgentController : MonoBehaviour
         float rotY = Input.GetAxis("Mouse X") * rotSpeed;
 
         currentRotX -= rotX;
-        currentRotX = Mathf.Clamp(currentRotX, -20f, 20f);
+        currentRotX = Mathf.Clamp(currentRotX, -20f, 40f);
 
         currentRotY -= rotY;
-        currentRotY = Mathf.Clamp(currentRotY, -80f, 80f);
+        currentRotY = Mathf.Clamp(currentRotY, -100f, 100f);
 
         cam.transform.localEulerAngles = new Vector3(currentRotX, -currentRotY, 0f);
     }
