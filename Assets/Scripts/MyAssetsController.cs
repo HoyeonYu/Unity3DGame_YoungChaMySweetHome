@@ -44,17 +44,22 @@ public class MyAssetsController : MonoBehaviour
         {
             if (i == 3)
             {
-                tab = "\t\t";
+                tab = "\t\t\t";
             }
 
             else if (i == 5 || i == 6)
             {
-                tab = "\t";
+                tab = "\t\t";
+            }
+
+            else if (i == 4)
+            {
+                tab = "";
             }
 
             else
             {
-                tab = "";
+                tab = "\t";
             }
 
             showText += "\n    - " + coinNameArr[i] + ":\t" + tab + "  " + coin[i] + "°³";

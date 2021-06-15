@@ -14,26 +14,35 @@ public class SuperMarketController : MonoBehaviour
     {
         superMarketInfoTxt = GameObject.Find("SuperMarketInfoTxt");
 
-        foodName = new string[5] { "빵\t", "과일", "초밥", "치킨", "한우" };
-        foodHungryValue = new int[5] { 20, 10, 25, 30, 45 };
-        foodHappyValue = new int[5] { 5, 3, 20, 25, 40 };
-        foodPrice = new int[5] { 3000, 1500, 15000, 20000, 200000 };
+        foodName = new string[5] { "과일", "만두", "초밥", "치킨", "한우" };
+        foodHungryValue = new int[5] { 5, 10, 25, 30, 45 };
+        foodHappyValue = new int[5] { 3, 10, 20, 25, 40 };
+        foodPrice = new int[5] { 1500, 3000, 15000, 20000, 200000 };
         foodBuyBtn = new GameObject[5];
         foodBuyBtnTxt = new GameObject[5];
 
         superMarketInfoTxt.GetComponent<Text>().text =
-            "음식재료\t\t포만감\t\t만족도\t\t가격 ";
+            "음식재료    " + "포만감      "
+            + "만족도      " + "가격\n";
 
         superMarketInfoTxt.GetComponent<Text>().text +=
-            "------------------------------------------------------------------------\n";
+            "----------------------------------------------------------------------\n";
 
         for (int i = 0; i < 5; i++)
         {
             foodBuyBtn[i] = GameObject.Find("SuperBtn_" + i);
             foodBuyBtnTxt[i] = GameObject.Find("SuperBtnTxt_" + i);
 
-            superMarketInfoTxt.GetComponent<Text>().text += foodName[i] + "\t\t\t\t" + 
-                foodHungryValue[i] + "\t\t\t\t" + foodHappyValue[i] + "\t\t\t\t" + foodPrice[i] + "원\n";
+            superMarketInfoTxt.GetComponent<Text>().text += foodName[i] + "            "
+                + foodHungryValue[i].ToString().PadRight(15, ' ');
+
+            if (i == 0)
+            {
+                superMarketInfoTxt.GetComponent<Text>().text += " ";
+            }
+
+            superMarketInfoTxt.GetComponent<Text>().text += foodHappyValue[i].ToString().PadRight(14, ' ') 
+                + foodPrice[i] + "원\n";
         }
     }
 

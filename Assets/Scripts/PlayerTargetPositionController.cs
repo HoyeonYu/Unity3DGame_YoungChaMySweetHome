@@ -7,6 +7,12 @@ public class PlayerTargetPositionController : MonoBehaviour
 {
     static public Vector3 targetPos; 
     RaycastHit hit;
+    GameObject targetParticle;
+
+    private void Start()
+    {
+        targetParticle = GameObject.Find("TargetParticle");
+    }
 
     void Update() { 
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
@@ -16,7 +22,12 @@ public class PlayerTargetPositionController : MonoBehaviour
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
                     targetPos = new Vector3(hit.point.x, 18f, hit.point.z);
-                    transform.position = targetPos;
+
+                    if (targetPos != transform.position)
+                    {
+                        transform.position = targetPos;
+                        targetParticle.GetComponent<ParticleSystem>().Play();
+                    }
                 }
             }
         }

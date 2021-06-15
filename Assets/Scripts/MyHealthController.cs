@@ -13,7 +13,7 @@ public class MyHealthController : MonoBehaviour
 
     void Start()
     {
-        hungryValue = 1;
+        hungryValue = 50;
         happyValue = 50;
         MyHealthTxt = GameObject.Find("MyHealthTxt");
         isGameEnd = false;
