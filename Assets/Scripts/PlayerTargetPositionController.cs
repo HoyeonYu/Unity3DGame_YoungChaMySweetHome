@@ -9,17 +9,14 @@ public class PlayerTargetPositionController : MonoBehaviour
     RaycastHit hit;
 
     void Update() { 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             if (GameDirector.MyAssetsCanvasFold.active || GameDirector.MyAssetsCanvasFull.active)
             {
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    if (!EventSystem.current.IsPointerOverGameObject())
-                    {
-                        targetPos = new Vector3(hit.point.x, 18f, hit.point.z);
-                        transform.position = targetPos;
-                    }
+                    targetPos = new Vector3(hit.point.x, 18f, hit.point.z);
+                    transform.position = targetPos;
                 }
             }
         }

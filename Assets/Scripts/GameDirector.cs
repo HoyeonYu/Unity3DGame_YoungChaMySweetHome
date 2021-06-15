@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameDirector : MonoBehaviour
 {
     static public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull;
-    public GameObject BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas,
-        SuperMarketCanvas, CarRepairShopCanvas, CarShopCanvas;
+    public GameObject MyHealthCanvas, BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas,
+        SuperMarketCanvas, CarRepairShopCanvas, CarShopCanvas, GameOverCanvas;
 
     static public bool isPlayerFixed;
 
@@ -17,6 +18,9 @@ public class GameDirector : MonoBehaviour
 
         MyAssetsCanvasFull = GameObject.Find("MyAssetsCanvasFull");
         MyAssetsCanvasFull.SetActive(false);
+
+        MyHealthCanvas = GameObject.Find("MyHealthCanvas");
+        MyHealthCanvas.SetActive(true);
 
         BankCanvas = GameObject.Find("BankCanvas");
         BankCanvas.SetActive(false);
@@ -39,6 +43,9 @@ public class GameDirector : MonoBehaviour
         CarShopCanvas = GameObject.Find("CarShopCanvas");
         CarShopCanvas.SetActive(false);
 
+        GameOverCanvas = GameObject.Find("GameOverCanvas");
+        GameOverCanvas.SetActive(false);
+
         isPlayerFixed = false;
     }
 
@@ -51,6 +58,19 @@ public class GameDirector : MonoBehaviour
         MyAssetsCanvasFull.SetActive(!(BankCanvas.active || RealEstateCanvas.active 
             || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFold.active
             || SuperMarketCanvas.active || CarRepairShopCanvas.active || CarShopCanvas.active));
+
+        MyHealthCanvas.SetActive(!(BankCanvas.active || RealEstateCanvas.active
+            || CoinCanvas.active || CoinDealCanvas.active
+            || SuperMarketCanvas.active || CarRepairShopCanvas.active || CarShopCanvas.active));
+
+        if (MyHealthController.isGameEnd)
+        {
+            MyAssetsCanvasFold.SetActive(false);
+            MyAssetsCanvasFull.SetActive(false);
+            MyHealthCanvas.SetActive(false);
+            GameOverCanvas.SetActive(true);
+            isPlayerFixed = true;
+        }
     }
 
     public void OnBankCanvasCloseClick()
@@ -109,6 +129,7 @@ public class GameDirector : MonoBehaviour
     {
         MyAssetsCanvasFull.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
+        isPlayerFixed = false;
     }
 
     public void OnSuperMarketCanvasCloseClick()
@@ -123,5 +144,15 @@ public class GameDirector : MonoBehaviour
         SuperMarketCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
+    }
+
+    public void OnGameOverAgainClick()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void OnGameOverExitClick()
+    {
+        Application.Quit();
     }
 }

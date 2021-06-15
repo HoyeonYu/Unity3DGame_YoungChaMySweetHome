@@ -6,16 +6,17 @@ using UnityEngine.UI;
 public class MyHealthController : MonoBehaviour
 {
     static public int hungryValue, happyValue;
-    GameObject MyHealthTxt, InfoCanvasTxt;
+    static public bool isGameEnd;
+    GameObject MyHealthTxt;
     float healthHungrySpan = 3.0f;
     float healthHungryDelta = 0;
 
     void Start()
     {
-        hungryValue = 50;
+        hungryValue = 1;
         happyValue = 50;
         MyHealthTxt = GameObject.Find("MyHealthTxt");
-        InfoCanvasTxt = GameObject.Find("InfoCanvasTxt");
+        isGameEnd = false;
     }
 
     void Update()
@@ -24,6 +25,11 @@ public class MyHealthController : MonoBehaviour
 
         UpdateHungryData();
         UpdateHappyData();
+
+        if (hungryValue <= 0 || happyValue >= 100)
+        {
+            isGameEnd = true;
+        }
     }
 
     void UpdateHungryData()
