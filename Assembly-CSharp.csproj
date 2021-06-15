@@ -68,6 +68,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\Scripts\GameOverQuitBtn.cs" />
     <Compile Include="Assets\Scripts\CoinPriceController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\CarSelfRighting.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Assets\Scripts\PlayerTargetPositionController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
+    <Compile Include="Assets\Scripts\GameOverAgainBtn.cs" />
     <Compile Include="Assets\Scripts\PlayerNavAgentController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\CarController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SmoothFollow.cs" />
@@ -172,8 +174,8 @@
     <Compile Include="Assets\Scripts\BuildingSignContoller.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Scripts\GameOverAgainBtn.cs" />
-    <Compile Include="Assets\Scripts\GameOverQuitBtn.cs" />
+    <Compile Include="Assets\Scripts\CarPrefabGenerator.cs" />
+    <Compile Include="Assets\Scripts\CarPrefabController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
