@@ -8,6 +8,7 @@ public class MyHealthController : MonoBehaviour
     static public int hungryValue, tireValue, hurtValue;
     static public bool isGameEnd;
     GameObject MyHealthTxt;
+
     float healthHungrySpan = 3.0f;
     float healthHungryDelta = 0;
     float healthHurtSpan = 3.0f;
@@ -46,6 +47,11 @@ public class MyHealthController : MonoBehaviour
             healthHungryDelta = 0;
         }
 
+        if (hungryValue > 100)
+        {
+            hungryValue = 100;
+        }
+
         string colorText = "<color=#00ff00>";
         string colorEndText = "</color>";
 
@@ -65,6 +71,11 @@ public class MyHealthController : MonoBehaviour
 
     void UpdateHappyData()
     {
+        if (tireValue < 0)
+        {
+            tireValue = 0;
+        }
+
         string colorText = "<color=#00ff00>";
         string colorEndText = "</color>";
 
@@ -84,16 +95,24 @@ public class MyHealthController : MonoBehaviour
 
     void UpdateHurtData()
     {
+        healthHurtDelta += Time.deltaTime;
+
+        if ((healthHurtDelta > healthHurtSpan) && hurtValue > 0)
+        {
+            if (!HospitalCureController.isCured)
+            {
+                hurtValue += 2;
+                healthHurtDelta = 0;
+            }
+        }
+
+        if (hurtValue < 0)
+        {
+            hurtValue = 0;
+        }
+
         string colorText = "<color=#00ff00>";
         string colorEndText = "</color>";
-
-        healthHungryDelta += Time.deltaTime;
-
-        if (healthHungryDelta > healthHungrySpan && hurtValue > 0)
-        {
-            hurtValue += 2;
-            healthHungryDelta = 0;
-        }
 
         if (hurtValue > 80)
         {

@@ -7,7 +7,7 @@ public class GameDirector : MonoBehaviour
 {
     static public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull;
     public GameObject MyHealthCanvas, BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas,
-        SuperMarketCanvas, CarRepairShopCanvas, CarShopCanvas, GameOverCanvas;
+        SuperMarketCanvas, HospitalCanvas, GameOverCanvas;
 
     static public bool isPlayerFixed;
 
@@ -37,11 +37,8 @@ public class GameDirector : MonoBehaviour
         SuperMarketCanvas = GameObject.Find("SuperMarketCanvas");
         SuperMarketCanvas.SetActive(false);
 
-        CarRepairShopCanvas = GameObject.Find("CarRepairShopCanvas");
-        CarRepairShopCanvas.SetActive(false);
-
-        CarShopCanvas = GameObject.Find("CarShopCanvas");
-        CarShopCanvas.SetActive(false);
+        HospitalCanvas = GameObject.Find("HospitalCanvas");
+        HospitalCanvas.SetActive(false);
 
         GameOverCanvas = GameObject.Find("GameOverCanvas");
         GameOverCanvas.SetActive(false);
@@ -53,15 +50,15 @@ public class GameDirector : MonoBehaviour
     {
         MyAssetsCanvasFold.SetActive(!(BankCanvas.active || RealEstateCanvas.active
             || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFull.active
-            || SuperMarketCanvas.active || CarRepairShopCanvas.active || CarShopCanvas.active));
+            || SuperMarketCanvas.active || HospitalCanvas.active));
 
         MyAssetsCanvasFull.SetActive(!(BankCanvas.active || RealEstateCanvas.active 
             || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFold.active
-            || SuperMarketCanvas.active || CarRepairShopCanvas.active || CarShopCanvas.active));
+            || SuperMarketCanvas.active || HospitalCanvas.active));
 
         MyHealthCanvas.SetActive(!(BankCanvas.active || RealEstateCanvas.active
             || CoinCanvas.active || CoinDealCanvas.active
-            || SuperMarketCanvas.active || CarRepairShopCanvas.active || CarShopCanvas.active));
+            || SuperMarketCanvas.active || HospitalCanvas.active));
 
         if (MyHealthController.isGameEnd)
         {
@@ -142,6 +139,20 @@ public class GameDirector : MonoBehaviour
     public void OnSuperMarketCanvasBuyClick()
     {
         SuperMarketCanvas.SetActive(false);
+        MyAssetsCanvasFold.SetActive(true);
+        isPlayerFixed = false;
+    }
+
+    public void OnHospitalCanvasCloseClick()
+    {
+        HospitalCanvas.SetActive(false);
+        MyAssetsCanvasFold.SetActive(true);
+        isPlayerFixed = false;
+    }
+
+    public void OnHospitalCanvasCureClick()
+    {
+        HospitalCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
     }

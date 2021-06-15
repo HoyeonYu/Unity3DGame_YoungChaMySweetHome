@@ -133,6 +133,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
     <Compile Include="Assets\Scripts\CoinCanvasCloseBtn.cs" />
+    <Compile Include="Assets\Scripts\CarPrefabGenerator.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\TimedObjectActivator.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\BrakeLight.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\TimedObjectDestructor.cs" />
+    <Compile Include="Assets\Scripts\CarPrefabController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\ActivateTrigger.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Characters\RollerBall\Scripts\Ball.cs" />
@@ -174,8 +176,9 @@
     <Compile Include="Assets\Scripts\BuildingSignContoller.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Scripts\CarPrefabGenerator.cs" />
-    <Compile Include="Assets\Scripts\CarPrefabController.cs" />
+    <Compile Include="Assets\Scripts\HospitalCanvasCloseBtn.cs" />
+    <Compile Include="Assets\Scripts\HospitalCureController.cs" />
+    <Compile Include="Assets\Scripts\HospitalCureBtn.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

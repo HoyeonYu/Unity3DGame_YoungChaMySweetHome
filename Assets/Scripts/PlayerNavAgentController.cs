@@ -36,10 +36,10 @@ public class PlayerNavAgentController : MonoBehaviour
         float rotY = Input.GetAxis("Mouse X") * rotSpeed;
 
         currentRotX -= rotX;
-        currentRotX = Mathf.Clamp(currentRotX, -20f, 40f);
+        currentRotX = Mathf.Clamp(currentRotX, -20f, 60f);
 
         currentRotY -= rotY;
-        currentRotY = Mathf.Clamp(currentRotY, -100f, 100f);
+        currentRotY = Mathf.Clamp(currentRotY, -160f, 160f);
 
         cam.transform.localEulerAngles = new Vector3(currentRotX, -currentRotY, 0f);
     }
@@ -72,25 +72,13 @@ public class PlayerNavAgentController : MonoBehaviour
             }
         }
 
-        if (collider.gameObject.tag == "CarRepairShop")
+        if (collider.gameObject.tag == "Hospital")
         {
             GameObject director = GameObject.Find("GameDirector");
 
-            if (!(director.GetComponent<GameDirector>().CarRepairShopCanvas.active))
+            if (!(director.GetComponent<GameDirector>().HospitalCanvas.active))
             {
-                director.GetComponent<GameDirector>().CarRepairShopCanvas.SetActive(true);
-                GameDirector.isPlayerFixed = true;
-                MyHealthController.tireValue += 5;
-            }
-        }
-
-        if (collider.gameObject.tag == "CarShop")
-        {
-            GameObject director = GameObject.Find("GameDirector");
-
-            if (!(director.GetComponent<GameDirector>().CarShopCanvas.active))
-            {
-                director.GetComponent<GameDirector>().CarShopCanvas.SetActive(true);
+                director.GetComponent<GameDirector>().HospitalCanvas.SetActive(true);
                 GameDirector.isPlayerFixed = true;
                 MyHealthController.tireValue += 5;
             }
@@ -99,6 +87,7 @@ public class PlayerNavAgentController : MonoBehaviour
         if (collider.gameObject.tag == "Car")
         {
             MyHealthController.hurtValue += 30;
+            HospitalCureController.isCured = false;
         }
     }
 }

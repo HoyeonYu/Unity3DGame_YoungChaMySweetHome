@@ -31,10 +31,9 @@ public class MyAssetsController : MonoBehaviour
     public void Update()
     {
         string showText = "자산\n\n";
-        showText += "  - 현금:\t\t" + cash + "원\n";
-        showText += "  - 집:\t\t\t" + house + "채\n";
-        showText += "  - 자동차:\t" + car + "대\n";
-        showText += "  - 코인: ";
+        showText += "  - 내 집 마련:\t미완성\n";
+        showText += "  - 현금 / 계좌:\t" + cash + "원\n";
+        showText += "  - 코인";
 
         myAssetsFoldText.GetComponent<Text>().text = showText;
 
@@ -44,20 +43,10 @@ public class MyAssetsController : MonoBehaviour
         {
             if (i == 3)
             {
-                tab = "\t\t\t";
-            }
-
-            else if (i == 5 || i == 6)
-            {
                 tab = "\t\t";
             }
 
-            else if (i == 4)
-            {
-                tab = "";
-            }
-
-            else
+            else if (i == 5 || i == 6)
             {
                 tab = "\t";
             }
