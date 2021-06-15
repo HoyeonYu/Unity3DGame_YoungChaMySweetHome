@@ -18,7 +18,7 @@ public class SuperMarketBuyBtn : MonoBehaviour
 
         MyAssetsController.cash -= foodPrice;
         MyHealthController.hungryValue += foodHungryValue;
-        MyHealthController.happyValue += foodHappyValue;
+        MyHealthController.tireValue -= foodHappyValue;
 
         InfoCanvasController.infoDealTxtdelta = 0;
     }

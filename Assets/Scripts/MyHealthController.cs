@@ -5,16 +5,19 @@ using UnityEngine.UI;
 
 public class MyHealthController : MonoBehaviour
 {
-    static public int hungryValue, happyValue;
+    static public int hungryValue, tireValue, hurtValue;
     static public bool isGameEnd;
     GameObject MyHealthTxt;
     float healthHungrySpan = 3.0f;
     float healthHungryDelta = 0;
+    float healthHurtSpan = 3.0f;
+    float healthHurtDelta = 0;
 
     void Start()
     {
         hungryValue = 50;
-        happyValue = 50;
+        tireValue = 50;
+        hurtValue = 0;
         MyHealthTxt = GameObject.Find("MyHealthTxt");
         isGameEnd = false;
     }
@@ -25,8 +28,9 @@ public class MyHealthController : MonoBehaviour
 
         UpdateHungryData();
         UpdateHappyData();
+        UpdateHurtData();
 
-        if (hungryValue <= 0 || happyValue >= 100)
+        if (hungryValue <= 0 || tireValue >= 100 || hurtValue >= 100)
         {
             isGameEnd = true;
         }
@@ -64,17 +68,44 @@ public class MyHealthController : MonoBehaviour
         string colorText = "<color=#00ff00>";
         string colorEndText = "</color>";
 
-        if (happyValue < 20)
+        if (tireValue > 80)
         {
             colorText = "<color=#ff0000>";
         }
 
-        else if (happyValue < 50)
+        else if (tireValue > 50)
         {
             colorText = "<color=#ffff00>";
         }
 
         MyHealthTxt.GetComponent<Text>().text += "  - 피로도\t\t "
-            + colorText + (100 - happyValue) + " / 100" + colorEndText;
+            + colorText + tireValue + " / 100" + colorEndText + "\n";
+    }
+
+    void UpdateHurtData()
+    {
+        string colorText = "<color=#00ff00>";
+        string colorEndText = "</color>";
+
+        healthHungryDelta += Time.deltaTime;
+
+        if (healthHungryDelta > healthHungrySpan && hurtValue > 0)
+        {
+            hurtValue += 2;
+            healthHungryDelta = 0;
+        }
+
+        if (hurtValue > 80)
+        {
+            colorText = "<color=#ff0000>";
+        }
+
+        else if (hurtValue > 50)
+        {
+            colorText = "<color=#ffff00>";
+        }
+
+        MyHealthTxt.GetComponent<Text>().text += "  - 부상도\t\t "
+            + colorText + hurtValue + " / 100" + colorEndText;
     }
 }

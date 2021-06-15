@@ -23,7 +23,7 @@ public class SuperMarketController : MonoBehaviour
 
         superMarketInfoTxt.GetComponent<Text>().text =
             "음식재료    " + "포만감      "
-            + "만족도      " + "가격\n";
+            + "피로회복    " + "가격\n";
 
         superMarketInfoTxt.GetComponent<Text>().text +=
             "----------------------------------------------------------------------\n";

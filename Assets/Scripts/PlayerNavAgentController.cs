@@ -56,7 +56,7 @@ public class PlayerNavAgentController : MonoBehaviour
             {
                 director.GetComponent<GameDirector>().BankCanvas.SetActive(true);
                 GameDirector.isPlayerFixed = true;
-                MyHealthController.happyValue -= 5;
+                MyHealthController.tireValue += 5;
             }
         }
 
@@ -68,7 +68,7 @@ public class PlayerNavAgentController : MonoBehaviour
             {
                 director.GetComponent<GameDirector>().SuperMarketCanvas.SetActive(true);
                 GameDirector.isPlayerFixed = true;
-                MyHealthController.happyValue -= 5;
+                MyHealthController.tireValue += 5;
             }
         }
 
@@ -80,7 +80,7 @@ public class PlayerNavAgentController : MonoBehaviour
             {
                 director.GetComponent<GameDirector>().CarRepairShopCanvas.SetActive(true);
                 GameDirector.isPlayerFixed = true;
-                MyHealthController.happyValue -= 5;
+                MyHealthController.tireValue += 5;
             }
         }
 
@@ -92,8 +92,13 @@ public class PlayerNavAgentController : MonoBehaviour
             {
                 director.GetComponent<GameDirector>().CarShopCanvas.SetActive(true);
                 GameDirector.isPlayerFixed = true;
-                MyHealthController.happyValue -= 5;
+                MyHealthController.tireValue += 5;
             }
+        }
+
+        if (collider.gameObject.tag == "Car")
+        {
+            MyHealthController.hurtValue += 30;
         }
     }
 }

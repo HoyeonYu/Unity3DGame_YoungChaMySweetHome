@@ -14,7 +14,6 @@ public class InfoCanvasController : MonoBehaviour
         InfoCanvasTxt = GameObject.Find("InfoCanvasTxt");
     }
 
-    // Update is called once per frame
     void Update()
     {
         InfoCanvasTxt.GetComponent<Text>().text = "거래 완료되었습니다.";
