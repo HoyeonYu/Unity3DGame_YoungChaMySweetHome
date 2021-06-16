@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class CoinPriceController : MonoBehaviour
 {
     static public int[] coinPriceInt;
-    private float[] coinDiffRate;
-    GameObject[] coinDealBtn, coinPriceText;
+    float[] coinDiffRate;
+    GameObject[] coinDealBtn, coinPriceText, coinChangeText;
     GameObject coinCurrentTimeText;
 
     float span = 2.0f;
@@ -19,6 +19,7 @@ public class CoinPriceController : MonoBehaviour
         coinDiffRate = new float[9];
         coinDealBtn = new GameObject[9];
         coinPriceText = new GameObject[9];
+        coinChangeText = new GameObject[9];
 
         coinCurrentTimeText = GameObject.Find("CoinCurrentTimeText");
 
@@ -28,6 +29,9 @@ public class CoinPriceController : MonoBehaviour
 
             coinPriceText[i] = GameObject.Find("CoinTxt_" + i);
             coinPriceText[i].GetComponent<Text>().text = "₩ " + coinPriceInt[i];
+
+            coinChangeText[i] = GameObject.Find("CoinTxt_" + i + " (1)");
+            coinChangeText[i].GetComponent<Text>().text = "";
         }
     }
 
@@ -69,24 +73,29 @@ public class CoinPriceController : MonoBehaviour
 
     void ChangePrice()
     {
-        coinDiffRate[0] = Random.Range(-0.1f, 0.1f);
-        coinDiffRate[1] = Random.Range(-0.3f, 0.3f);
+        coinDiffRate[0] = Random.Range(-0.1f, 0.2f);
+        coinDiffRate[1] = Random.Range(-0.3f, 0.5f);
         coinDiffRate[2] = Random.Range(-0.2f, 0.2f);
-        coinDiffRate[3] = Random.Range(-0.2f, 0.2f);
+        coinDiffRate[3] = Random.Range(-0.6f, 1.2f);
         coinDiffRate[4] = Random.Range(-0.05f, 0.1f);
-        coinDiffRate[5] = Random.Range(-0.4f, 0.3f);
-        coinDiffRate[6] = Random.Range(-0.3f, 0.2f);
-        coinDiffRate[7] = Random.Range(-0.2f, 0.3f);
-        coinDiffRate[8] = Random.Range(-0.3f, 0.4f);
+        coinDiffRate[5] = Random.Range(-0.6f, 0.8f);
+        coinDiffRate[6] = Random.Range(-0.5f, 0.6f);
+        coinDiffRate[7] = Random.Range(-0.2f, 0.2f);
+        coinDiffRate[8] = Random.Range(-0.8f, 1.8f);
 
 
         for (int i = 0; i < 9; i++)
         {
-            string textColor = (coinDiffRate[i] > 0 ? "<color=#ff0505>" : "<color=#0000ff>");
+            int changePrice = (int)(coinPriceInt[i] * coinDiffRate[i]);
+            coinPriceInt[i] += changePrice;
+            coinPriceText[i].GetComponent<Text>().text = "₩ " + coinPriceInt[i].ToString();
 
-            coinPriceInt[i] += (int)(coinPriceInt[i] * coinDiffRate[i]);
-            coinPriceText[i].GetComponent<Text>().text = "₩ " + coinPriceInt[i].ToString() 
-                + textColor + " (" + (coinDiffRate[i] * 100).ToString("F2") + "%)" + "</color>";
+            string upDownStart = (coinDiffRate[i] > 0 ? "<color=#B40B01> +" : "<color=#0012D4> ");
+            string upDownMid = (coinDiffRate[i] > 0 ? " (+" : " (");
+            string upDownEnd = (coinDiffRate[i] > 0 ? "%) ▲</color>" : "%) ▼</color>");
+
+            coinChangeText[i].GetComponent<Text>().text = upDownStart + changePrice + upDownMid
+                + (coinDiffRate[i] * 100).ToString("F2") + upDownEnd;
         }
     }
 }
