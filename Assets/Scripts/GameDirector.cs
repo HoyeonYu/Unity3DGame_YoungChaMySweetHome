@@ -8,8 +8,10 @@ public class GameDirector : MonoBehaviour
     static public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull;
     public GameObject MyHealthCanvas, BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas,
         SuperMarketCanvas, HospitalCanvas, GameOverCanvas;
+    GameObject[] CarGenerator;
 
     static public bool isPlayerFixed;
+    float gameLevelDelta;
 
     void Start()
     {
@@ -43,7 +45,14 @@ public class GameDirector : MonoBehaviour
         GameOverCanvas = GameObject.Find("GameOverCanvas");
         GameOverCanvas.SetActive(false);
 
+        CarGenerator = new GameObject[16];
+        for (int i = 0; i < 16; i++)
+        {
+            CarGenerator[i] = GameObject.Find("CarGenerator_" + i);
+        }
+
         isPlayerFixed = false;
+        gameLevelDelta = 0;
     }
 
     void Update()
@@ -59,6 +68,41 @@ public class GameDirector : MonoBehaviour
         MyHealthCanvas.SetActive(!(BankCanvas.active || RealEstateCanvas.active
             || CoinCanvas.active || CoinDealCanvas.active
             || SuperMarketCanvas.active || HospitalCanvas.active));
+
+        gameLevelDelta += Time.deltaTime;
+        gameLevelDelta %= 60;
+
+        if ((int)gameLevelDelta / 15 == 0)
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                CarGenerator[i].GetComponent<CarPrefabGenerator>().carGenerateSpan = 5;
+            }
+        }
+
+        else if ((int)gameLevelDelta / 15 == 1)
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                CarGenerator[i].GetComponent<CarPrefabGenerator>().carGenerateSpan = 3;
+            }
+        }
+
+        else if ((int)gameLevelDelta / 15 == 2)
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                CarGenerator[i].GetComponent<CarPrefabGenerator>().carGenerateSpan = 4;
+            }
+        }
+
+        else
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                CarGenerator[i].GetComponent<CarPrefabGenerator>().carGenerateSpan = 6;
+            }
+        }
 
         if (MyHealthController.isGameEnd)
         {

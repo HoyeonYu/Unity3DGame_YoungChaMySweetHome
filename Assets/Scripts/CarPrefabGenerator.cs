@@ -5,15 +5,14 @@ using UnityEngine;
 public class CarPrefabGenerator : MonoBehaviour
 {
     public GameObject[] carPrefab;
-    public float initPosX, initPosZ, span;
-    public int generatorCode;
-    float initPosY;
-    float delta;
+    public float initPosX, initPosZ;
+    public int generatorCode, carGenerateSpan;
+    float initPosY, carGenerateDelta;
     static public int[] endPos;
 
     void Start()
     {
-        delta = 0;
+        carGenerateDelta = 0;
         initPosY = 17.83663f;
         endPos = new int[4] { 60, 450, 365, -34 };
 
@@ -42,11 +41,11 @@ public class CarPrefabGenerator : MonoBehaviour
 
     void Update()
     {
-        this.delta += Time.deltaTime;
+        carGenerateDelta += Time.deltaTime;
 
-        if (delta > span)
+        if (carGenerateDelta > carGenerateSpan)
         {
-            delta = 0;
+            carGenerateDelta = 0;
 
             int randPrefabIdx = Random.Range(0, carPrefab.Length);
             GameObject gameObject = Instantiate(carPrefab[randPrefabIdx]);
