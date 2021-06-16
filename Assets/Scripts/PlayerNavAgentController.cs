@@ -50,9 +50,7 @@ public class PlayerNavAgentController : MonoBehaviour
         {
             GameObject director = GameObject.Find("GameDirector");
 
-            if (!(director.GetComponent<GameDirector>().RealEstateCanvas.active ||
-                director.GetComponent<GameDirector>().CoinCanvas.active ||
-                director.GetComponent<GameDirector>().CoinDealCanvas.active))
+            if (!(director.GetComponent<GameDirector>().CoinDealCanvas.active))
             {
                 director.GetComponent<GameDirector>().BankCanvas.SetActive(true);
                 GameDirector.isPlayerFixed = true;

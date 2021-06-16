@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class MyAssetsController : MonoBehaviour
 {
     static public int cash, house, car;
+    public int cashPublic;
     static public int[] coin;
-    GameObject myAssetsFoldText, myAssetsFullText;
+    GameObject myAssetsFoldText, myAssetsFullText, myAssetsCoinNumText;
     string[] coinNameArr;
 
     void Start()
     {
-        cash = 100000;
+        cash = cashPublic;
         house = 1;
         car = 0;
 
@@ -20,6 +21,7 @@ public class MyAssetsController : MonoBehaviour
 
         myAssetsFoldText = GameObject.Find("MyAssetsFoldTxt");
         myAssetsFullText = GameObject.Find("MyAssetsFullTxt");
+        myAssetsCoinNumText = GameObject.Find("MyAssetsCoinNumTxt");
 
         coinNameArr = new string[9] {
             "호트코인 (HTC)", "아더리움 (ATH)", "하이낸스 (HNB)",
@@ -30,30 +32,28 @@ public class MyAssetsController : MonoBehaviour
 
     public void Update()
     {
-        string showText = "자산\n\n";
-        showText += "  - 내 집 마련:\t미완성\n";
-        showText += "  - 현금 / 계좌:\t" + cash + "원\n";
-        showText += "  - 코인";
+        string commonTxt = "자산\n\n";
+        commonTxt += "  - 내 집 마련 (2억):\t";
 
-        myAssetsFoldText.GetComponent<Text>().text = showText;
+        string houseAvailable = "<color=#ff0000>불가능</color>\n";
 
-        string tab = "";
+        if (MyAssetsController.cash >= 200000000)
+        {
+            houseAvailable = "<color=#00ff00>가능</color>\n"; 
+        }
+
+        commonTxt += houseAvailable;
+        commonTxt += "  - 현금 / 계좌:\t" + cash + "원\n";
+        commonTxt += "  - 코인\n";
+
+        myAssetsFoldText.GetComponent<Text>().text = commonTxt;
+        myAssetsFullText.GetComponent<Text>().text = commonTxt;
+        myAssetsCoinNumText.GetComponent<Text>().text = "";
 
         for (int i = 0; i < 9; i++)
         {
-            if (i == 3)
-            {
-                tab = "\t\t";
-            }
-
-            else if (i == 5 || i == 6)
-            {
-                tab = "\t";
-            }
-
-            showText += "\n    - " + coinNameArr[i] + ":\t" + tab + "  " + coin[i] + "개";
+            myAssetsFullText.GetComponent<Text>().text += "    - " + coinNameArr[i] + ":\n";
+            myAssetsCoinNumText.GetComponent<Text>().text += coin[i] + "개\n";
         }
-
-        myAssetsFullText.GetComponent<Text>().text = showText;
     }
 }

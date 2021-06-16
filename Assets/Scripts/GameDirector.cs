@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameDirector : MonoBehaviour
 {
     static public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull;
-    public GameObject MyHealthCanvas, BankCanvas, RealEstateCanvas,CoinCanvas, CoinDealCanvas,
-        SuperMarketCanvas, HospitalCanvas, GameOverCanvas;
+    public GameObject MyHealthCanvas, BankCanvas, CoinCanvas, CoinDealCanvas,
+        SuperMarketCanvas, HospitalCanvas, GameOverCanvas, GameSuccessCanvas;
     GameObject[] CarGenerator;
 
     static public bool isPlayerFixed;
     float gameLevelDelta;
+    bool isGameSuccess;
 
     void Start()
     {
@@ -26,9 +27,6 @@ public class GameDirector : MonoBehaviour
 
         BankCanvas = GameObject.Find("BankCanvas");
         BankCanvas.SetActive(false);
-
-        RealEstateCanvas = GameObject.Find("RealEstateCanvas");
-        RealEstateCanvas.SetActive(false);
 
         CoinCanvas = GameObject.Find("CoinCanvas");
         CoinCanvas.SetActive(false);
@@ -45,6 +43,9 @@ public class GameDirector : MonoBehaviour
         GameOverCanvas = GameObject.Find("GameOverCanvas");
         GameOverCanvas.SetActive(false);
 
+        GameSuccessCanvas = GameObject.Find("GameSuccessCanvas");
+        GameSuccessCanvas.SetActive(false);
+
         CarGenerator = new GameObject[16];
         for (int i = 0; i < 16; i++)
         {
@@ -53,20 +54,18 @@ public class GameDirector : MonoBehaviour
 
         isPlayerFixed = false;
         gameLevelDelta = 0;
+        isGameSuccess = false;
     }
 
     void Update()
     {
-        MyAssetsCanvasFold.SetActive(!(BankCanvas.active || RealEstateCanvas.active
-            || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFull.active
-            || SuperMarketCanvas.active || HospitalCanvas.active));
+        MyAssetsCanvasFold.SetActive(!(BankCanvas.active || CoinCanvas.active || CoinDealCanvas.active 
+            || MyAssetsCanvasFull.active || SuperMarketCanvas.active || HospitalCanvas.active));
 
-        MyAssetsCanvasFull.SetActive(!(BankCanvas.active || RealEstateCanvas.active 
-            || CoinCanvas.active || CoinDealCanvas.active || MyAssetsCanvasFold.active
-            || SuperMarketCanvas.active || HospitalCanvas.active));
+        MyAssetsCanvasFull.SetActive(!(BankCanvas.active || CoinCanvas.active || CoinDealCanvas.active
+            || MyAssetsCanvasFold.active || SuperMarketCanvas.active || HospitalCanvas.active));
 
-        MyHealthCanvas.SetActive(!(BankCanvas.active || RealEstateCanvas.active
-            || CoinCanvas.active || CoinDealCanvas.active
+        MyHealthCanvas.SetActive(!(BankCanvas.active || CoinCanvas.active || CoinDealCanvas.active
             || SuperMarketCanvas.active || HospitalCanvas.active));
 
         gameLevelDelta += Time.deltaTime;
@@ -112,24 +111,20 @@ public class GameDirector : MonoBehaviour
             GameOverCanvas.SetActive(true);
             isPlayerFixed = true;
         }
+
+        if (isGameSuccess)
+        {
+            MyAssetsCanvasFold.SetActive(false);
+            MyAssetsCanvasFull.SetActive(false);
+            MyHealthCanvas.SetActive(false);
+            GameSuccessCanvas.SetActive(true);
+            isPlayerFixed = true;
+        }
     }
 
     public void OnBankCanvasCloseClick()
     {
         BankCanvas.SetActive(false);
-        isPlayerFixed = false;
-    }
-
-    public void OnRealEstateCanvasOpenClick()
-    {
-        RealEstateCanvas.SetActive(true);
-        BankCanvas.SetActive(false);
-        isPlayerFixed = true;
-    }
-
-    public void OnRealEstateCanvasCloseClick()
-    {
-        RealEstateCanvas.SetActive(false);
         isPlayerFixed = false;
     }
 
@@ -171,6 +166,12 @@ public class GameDirector : MonoBehaviour
         MyAssetsCanvasFull.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
+    }
+
+    public void OnBuyHouseClick()
+    {
+        isGameSuccess = true;
+        BankCanvas.SetActive(false);
     }
 
     public void OnSuperMarketCanvasCloseClick()

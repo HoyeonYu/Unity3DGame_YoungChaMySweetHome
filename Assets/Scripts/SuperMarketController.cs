@@ -41,7 +41,7 @@ public class SuperMarketController : MonoBehaviour
                 superMarketInfoTxt.GetComponent<Text>().text += " ";
             }
 
-            superMarketInfoTxt.GetComponent<Text>().text += foodHappyValue[i].ToString().PadRight(14, ' ') 
+            superMarketInfoTxt.GetComponent<Text>().text += foodHappyValue[i].ToString().PadRight(16, ' ') 
                 + foodPrice[i] + "¿ø\n";
         }
     }
