@@ -60,6 +60,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Car\Scripts\CarAIControl.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Vehicles\Aircraft\Scripts\AeroplaneUserControl4Axis.cs" />
+    <Compile Include="Assets\Scripts\BankCanvasController.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\DragRigidbody.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
     <Compile Include="Assets\Scripts\HospitalCureController.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\PlatformSpecificContent.cs" />
+    <Compile Include="Assets\Scripts\BuyHouseBtn.cs" />
     <Compile Include="Assets\Scripts\CoinDealCanvasOpenBtn.cs" />
     <Compile Include="Assets\Scripts\BankCanvasCloseBtn.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
@@ -177,8 +179,7 @@
     <Compile Include="Assets\Scripts\BuildingSignContoller.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\DownloadAssets\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Scripts\BankCanvasController.cs" />
-    <Compile Include="Assets\Scripts\BuyHouseBtn.cs" />
+    <Compile Include="Assets\Scripts\GameStartBtn.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\DownloadAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

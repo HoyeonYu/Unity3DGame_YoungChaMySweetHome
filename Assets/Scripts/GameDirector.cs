@@ -7,23 +7,23 @@ public class GameDirector : MonoBehaviour
 {
     static public GameObject MyAssetsCanvasFold, MyAssetsCanvasFull;
     public GameObject MyHealthCanvas, BankCanvas, CoinCanvas, CoinDealCanvas,
-        SuperMarketCanvas, HospitalCanvas, GameOverCanvas, GameSuccessCanvas;
+        SuperMarketCanvas, HospitalCanvas, GameStartCanvas, GameOverCanvas, GameSuccessCanvas;
     GameObject[] CarGenerator;
 
     static public bool isPlayerFixed;
-    float gameLevelDelta;
     bool isGameSuccess;
+    float gameLevelDelta;
 
     void Start()
     {
         MyAssetsCanvasFold = GameObject.Find("MyAssetsCanvasFold");
-        MyAssetsCanvasFold.SetActive(true);
+        MyAssetsCanvasFold.SetActive(false);
 
         MyAssetsCanvasFull = GameObject.Find("MyAssetsCanvasFull");
         MyAssetsCanvasFull.SetActive(false);
 
         MyHealthCanvas = GameObject.Find("MyHealthCanvas");
-        MyHealthCanvas.SetActive(true);
+        MyHealthCanvas.SetActive(false);
 
         BankCanvas = GameObject.Find("BankCanvas");
         BankCanvas.SetActive(false);
@@ -40,6 +40,9 @@ public class GameDirector : MonoBehaviour
         HospitalCanvas = GameObject.Find("HospitalCanvas");
         HospitalCanvas.SetActive(false);
 
+        GameStartCanvas = GameObject.Find("GameStartCanvas");
+        GameStartCanvas.SetActive(true);
+
         GameOverCanvas = GameObject.Find("GameOverCanvas");
         GameOverCanvas.SetActive(false);
 
@@ -52,21 +55,24 @@ public class GameDirector : MonoBehaviour
             CarGenerator[i] = GameObject.Find("CarGenerator_" + i);
         }
 
-        isPlayerFixed = false;
-        gameLevelDelta = 0;
+        isPlayerFixed = true;
         isGameSuccess = false;
+        gameLevelDelta = 0;
     }
 
     void Update()
     {
         MyAssetsCanvasFold.SetActive(!(BankCanvas.active || CoinCanvas.active || CoinDealCanvas.active 
-            || MyAssetsCanvasFull.active || SuperMarketCanvas.active || HospitalCanvas.active));
+            || MyAssetsCanvasFull.active || SuperMarketCanvas.active || HospitalCanvas.active
+            || GameStartCanvas.active || GameOverCanvas.active || GameSuccessCanvas.active));
 
         MyAssetsCanvasFull.SetActive(!(BankCanvas.active || CoinCanvas.active || CoinDealCanvas.active
-            || MyAssetsCanvasFold.active || SuperMarketCanvas.active || HospitalCanvas.active));
+            || MyAssetsCanvasFold.active || SuperMarketCanvas.active || HospitalCanvas.active
+            || GameStartCanvas.active || GameOverCanvas.active || GameSuccessCanvas.active));
 
         MyHealthCanvas.SetActive(!(BankCanvas.active || CoinCanvas.active || CoinDealCanvas.active
-            || SuperMarketCanvas.active || HospitalCanvas.active));
+            || SuperMarketCanvas.active || HospitalCanvas.active
+            || GameStartCanvas.active || GameOverCanvas.active || GameSuccessCanvas.active));
 
         gameLevelDelta += Time.deltaTime;
         gameLevelDelta %= 60;
@@ -198,6 +204,13 @@ public class GameDirector : MonoBehaviour
     public void OnHospitalCanvasCureClick()
     {
         HospitalCanvas.SetActive(false);
+        MyAssetsCanvasFold.SetActive(true);
+        isPlayerFixed = false;
+    }
+
+    public void OnGameStartClick()
+    {
+        GameStartCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
     }

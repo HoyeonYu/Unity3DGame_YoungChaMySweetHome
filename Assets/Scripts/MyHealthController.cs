@@ -25,7 +25,7 @@ public class MyHealthController : MonoBehaviour
 
     void Update()
     {
-        MyHealthTxt.GetComponent<Text>().text = "건강상태\n\n";
+        MyHealthTxt.GetComponent<Text>().text = "<b>건강상태</b>\n";
 
         UpdateHungryData();
         UpdateHappyData();
@@ -57,7 +57,7 @@ public class MyHealthController : MonoBehaviour
 
         if (hungryValue < 20)
         {
-            colorText = "<color=#ff0000>";
+            colorText = "<color=#22FFAA>";
         }
 
         else if (hungryValue < 50)
@@ -76,7 +76,7 @@ public class MyHealthController : MonoBehaviour
             tireValue = 0;
         }
 
-        string colorText = "<color=#00ff00>";
+        string colorText = "<color=#22FFAA>";
         string colorEndText = "</color>";
 
         if (tireValue > 80)
@@ -111,7 +111,7 @@ public class MyHealthController : MonoBehaviour
             hurtValue = 0;
         }
 
-        string colorText = "<color=#00ff00>";
+        string colorText = "<color=#22FFAA>";
         string colorEndText = "</color>";
 
         if (hurtValue > 80)

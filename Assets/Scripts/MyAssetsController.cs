@@ -32,14 +32,14 @@ public class MyAssetsController : MonoBehaviour
 
     public void Update()
     {
-        string commonTxt = "자산\n\n";
+        string commonTxt = "<b>자산</b>\n";
         commonTxt += "  - 내 집 마련 (2억):\t";
 
         string houseAvailable = "<color=#ff0000>불가능</color>\n";
 
         if (MyAssetsController.cash >= 200000000)
         {
-            houseAvailable = "<color=#00ff00>가능</color>\n"; 
+            houseAvailable = "<color=#22FFAA>가능</color>\n"; 
         }
 
         commonTxt += houseAvailable;
