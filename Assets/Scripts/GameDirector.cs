@@ -11,7 +11,7 @@ public class GameDirector : MonoBehaviour
     GameObject[] CarGenerator;
 
     static public bool isPlayerFixed;
-    bool isGameSuccess;
+    bool isGameSuccess, isGameDone;
     float gameLevelDelta;
 
     void Start()
@@ -57,7 +57,10 @@ public class GameDirector : MonoBehaviour
 
         isPlayerFixed = true;
         isGameSuccess = false;
+        isGameDone = false;
         gameLevelDelta = 0;
+
+        GameObject.Find("AudioMain").GetComponent<AudioSource>().Play();
     }
 
     void Update()
@@ -116,6 +119,13 @@ public class GameDirector : MonoBehaviour
             MyHealthCanvas.SetActive(false);
             GameOverCanvas.SetActive(true);
             isPlayerFixed = true;
+
+            if (!isGameDone)
+            {
+                GameObject.Find("AudioMain").GetComponent<AudioSource>().Pause();
+                GameObject.Find("AudioFail").GetComponent<AudioSource>().Play();
+                isGameDone = true;
+            }
         }
 
         if (isGameSuccess)
@@ -125,6 +135,13 @@ public class GameDirector : MonoBehaviour
             MyHealthCanvas.SetActive(false);
             GameSuccessCanvas.SetActive(true);
             isPlayerFixed = true;
+
+            if (!isGameDone)
+            {
+                GameObject.Find("AudioMain").GetComponent<AudioSource>().Pause();
+                GameObject.Find("AudioSuccess").GetComponent<AudioSource>().Play();
+                isGameDone = true;
+            }
         }
     }
 
@@ -132,6 +149,7 @@ public class GameDirector : MonoBehaviour
     {
         BankCanvas.SetActive(false);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnCoinCanvasOpenClick()
@@ -139,12 +157,14 @@ public class GameDirector : MonoBehaviour
         CoinCanvas.SetActive(true);
         BankCanvas.SetActive(false);
         isPlayerFixed = true;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnCoinCanvasCloseClick()
     {
         CoinCanvas.SetActive(false);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnCoinDealCanvasOpenClick()
@@ -152,12 +172,14 @@ public class GameDirector : MonoBehaviour
         CoinCanvas.SetActive(false);
         CoinDealCanvas.SetActive(true);
         isPlayerFixed = true;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnCoinDealCanvasCloseClick()
     {
         CoinDealCanvas.SetActive(false);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnCoinGetFullAssetsCanvasClick()
@@ -165,6 +187,7 @@ public class GameDirector : MonoBehaviour
         MyAssetsCanvasFold.SetActive(false);
         MyAssetsCanvasFull.SetActive(true);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnCoinGetFoldAssetsCanvasClick()
@@ -172,12 +195,14 @@ public class GameDirector : MonoBehaviour
         MyAssetsCanvasFull.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnBuyHouseClick()
     {
         isGameSuccess = true;
         BankCanvas.SetActive(false);
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnSuperMarketCanvasCloseClick()
@@ -185,6 +210,7 @@ public class GameDirector : MonoBehaviour
         SuperMarketCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnSuperMarketCanvasBuyClick()
@@ -192,6 +218,7 @@ public class GameDirector : MonoBehaviour
         SuperMarketCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnHospitalCanvasCloseClick()
@@ -199,6 +226,7 @@ public class GameDirector : MonoBehaviour
         HospitalCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnHospitalCanvasCureClick()
@@ -206,6 +234,7 @@ public class GameDirector : MonoBehaviour
         HospitalCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnGameStartClick()
@@ -213,6 +242,7 @@ public class GameDirector : MonoBehaviour
         GameStartCanvas.SetActive(false);
         MyAssetsCanvasFold.SetActive(true);
         isPlayerFixed = false;
+        GameObject.Find("AudioClick").GetComponent<AudioSource>().Play();
     }
 
     public void OnGameOverAgainClick()

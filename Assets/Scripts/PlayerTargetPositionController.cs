@@ -21,12 +21,20 @@ public class PlayerTargetPositionController : MonoBehaviour
             {
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    targetPos = new Vector3(hit.point.x, 18f, hit.point.z);
-
-                    if (targetPos != transform.position)
+                    if (GameDirector.isPlayerFixed)
                     {
-                        transform.position = targetPos;
-                        targetParticle.GetComponent<ParticleSystem>().Play();
+                        targetPos = transform.position;
+                    }
+
+                    else
+                    {
+                        targetPos = new Vector3(hit.point.x, 18f, hit.point.z);
+
+                        if (targetPos != transform.position)
+                        {
+                            transform.position = targetPos;
+                            targetParticle.GetComponent<ParticleSystem>().Play();
+                        }
                     }
                 }
             }

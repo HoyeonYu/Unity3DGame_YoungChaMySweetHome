@@ -6,11 +6,9 @@ using UnityEngine.AI;
 public class PlayerNavAgentController : MonoBehaviour
 {
     public Camera cam;
-
     Vector3 targetPosition;
     NavMeshAgent agent;
-    float rotSpeed;
-    float currentRotX, currentRotY;
+    float rotSpeed, currentRotX, currentRotY;
 
     void Start()
     {
@@ -39,7 +37,7 @@ public class PlayerNavAgentController : MonoBehaviour
         currentRotX = Mathf.Clamp(currentRotX, -20f, 60f);
 
         currentRotY -= rotY;
-        currentRotY = Mathf.Clamp(currentRotY, -160f, 160f);
+        currentRotY = Mathf.Clamp(currentRotY, -170f, 170f);
 
         cam.transform.localEulerAngles = new Vector3(currentRotX, -currentRotY, 0f);
     }
@@ -86,6 +84,11 @@ public class PlayerNavAgentController : MonoBehaviour
         {
             MyHealthController.hurtValue += 30;
             HospitalCureController.isCured = false;
+
+            if (!GameDirector.isPlayerFixed)
+            {
+                GameObject.Find("AudioHurt").GetComponent<AudioSource>().Play();
+            }
         }
     }
 }

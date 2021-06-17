@@ -43,7 +43,7 @@ public class MyAssetsController : MonoBehaviour
         }
 
         commonTxt += houseAvailable;
-        commonTxt += "  - 현금 / 계좌:\t" + cash + "원\n";
+        commonTxt += "  - 현금:\t\t" + cash + "원\n";
         commonTxt += "  - 코인\n";
 
         myAssetsFoldText.GetComponent<Text>().text = commonTxt;
