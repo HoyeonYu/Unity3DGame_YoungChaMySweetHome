@@ -52,12 +52,12 @@ public class MyHealthController : MonoBehaviour
             hungryValue = 100;
         }
 
-        string colorText = "<color=#00ff00>";
+        string colorText = "<color=#22FFAA>";
         string colorEndText = "</color>";
 
         if (hungryValue < 20)
         {
-            colorText = "<color=#22FFAA>";
+            colorText = "<color=#ff0000>";
         }
 
         else if (hungryValue < 50)

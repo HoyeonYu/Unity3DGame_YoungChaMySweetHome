@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CoinPriceController : MonoBehaviour
 {
-    static public int[] coinPriceInt;
+    static public int[] coinPriceInt, coinTotalPriceInt;
     float[] coinDiffRate;
     GameObject[] coinDealBtn, coinPriceText, coinChangeText;
     GameObject coinCurrentTimeText;
@@ -16,6 +16,7 @@ public class CoinPriceController : MonoBehaviour
     void Start()
     {
         coinPriceInt = new int[9] { 8000, 400, 98000, 20, 900, 300, 800, 100000, 200 };
+        coinTotalPriceInt = new int[9];
         coinDiffRate = new float[9];
         coinDealBtn = new GameObject[9];
         coinPriceText = new GameObject[9];
@@ -25,6 +26,7 @@ public class CoinPriceController : MonoBehaviour
 
         for (int i = 0; i < 9; i++)
         {
+            coinTotalPriceInt[i] = 0;
             coinDealBtn[i] = GameObject.Find("CoinBtn_" + i);
 
             coinPriceText[i] = GameObject.Find("CoinTxt_" + i);

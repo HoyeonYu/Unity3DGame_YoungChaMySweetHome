@@ -25,6 +25,8 @@ public class CoinBuyBtn : MonoBehaviour
             if (coinDealNum <= CoinDealInfoController.coinMaxAvailNum)
             {
                 coinDealNumInputField.text = "";
+                CoinPriceController.coinTotalPriceInt[CoinDealCanvasOpenBtn.coinIdx] 
+                    += CoinDealCanvasOpenBtn.coinPrice * coinDealNum;
 
                 MyAssetsController.cash -= (CoinDealCanvasOpenBtn.coinPrice * coinDealNum);
                 MyAssetsController.coin[CoinDealCanvasOpenBtn.coinIdx] += coinDealNum;

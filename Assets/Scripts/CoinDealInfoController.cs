@@ -7,6 +7,7 @@ public class CoinDealInfoController : MonoBehaviour
 {
     GameObject coinDealInfoText;
     static public int coinMaxAvailNum;
+    static public float avgCoinPrice;
 
     void LateUpdate()
     {
@@ -24,9 +25,17 @@ public class CoinDealInfoController : MonoBehaviour
 
             coinDealInfoText.GetComponent<Text>().text += 
                "최대 매수 가능 수량: " + coinMaxAvailNum + "개\n" +
-               "최대 매도 가능 수량: " + MyAssetsController.coin[CoinDealCanvasOpenBtn.coinIdx] + "개";
+               "최대 매도 가능 수량: " + MyAssetsController.coin[CoinDealCanvasOpenBtn.coinIdx] + "개\n";
 
-            coinDealInfoText.GetComponent<Text>().text += "\n\n매수 또는 매도 수량을 입력하세요";
+            if (MyAssetsController.coin[CoinDealCanvasOpenBtn.coinIdx] > 0)
+            {
+                avgCoinPrice = CoinPriceController.coinTotalPriceInt[CoinDealCanvasOpenBtn.coinIdx]
+                    / MyAssetsController.coin[CoinDealCanvasOpenBtn.coinIdx];
+
+                coinDealInfoText.GetComponent<Text>().text += "(구입 평균 단가: " + avgCoinPrice.ToString("F2") + "원)\n";
+            }
+
+            coinDealInfoText.GetComponent<Text>().text += "매수 또는 매도 수량을 입력하세요";
 
         }
     }
