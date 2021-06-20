@@ -10,7 +10,7 @@ public class CoinPriceController : MonoBehaviour
     GameObject[] coinDealBtn, coinPriceText, coinChangeText;
     GameObject coinCurrentTimeText;
 
-    float span = 2.0f;
+    float span = 1.0f;
     float delta = 0;
 
     void Start()
@@ -49,7 +49,7 @@ public class CoinPriceController : MonoBehaviour
             coinDealBtn[i].GetComponent<Button>().interactable = true;
         }
 
-        if ((int.Parse(System.DateTime.Now.ToString("ss")) / 10) % 2 != 0)
+        if ((int.Parse(System.DateTime.Now.ToString("ss")) / 5) % 2 != 0)
         {
             isDealAvailable = ", 거래 불가 시간";
 

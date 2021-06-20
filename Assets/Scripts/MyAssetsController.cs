@@ -5,18 +5,14 @@ using UnityEngine.UI;
 
 public class MyAssetsController : MonoBehaviour
 {
-    static public int cash, house, car;
-    public int cashPublic;
+    static public int cash;
     static public int[] coin;
     GameObject myAssetsFoldText, myAssetsFullText, myAssetsCoinNumText;
     string[] coinNameArr;
 
     void Start()
     {
-        cash = cashPublic;
-        house = 1;
-        car = 0;
-
+        cash = 5000000;
         coin = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         myAssetsFoldText = GameObject.Find("MyAssetsFoldTxt");

@@ -248,6 +248,14 @@ public class GameDirector : MonoBehaviour
     public void OnGameOverAgainClick()
     {
         SceneManager.LoadScene("GameScene");
+
+        MyHealthController.hungryValue = 50;
+        MyHealthController.tireValue = 50;
+        MyHealthController.hurtValue = 0;
+        MyHealthController.isGameEnd = false;
+
+        MyAssetsController.cash = 5000000;
+        MyAssetsController.coin = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     }
 
     public void OnGameOverExitClick()
