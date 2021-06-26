@@ -42,7 +42,7 @@ https://assetstore.unity.com/packages/3d/vegetation/plants/yughues-free-bushes-1
 ## Player Particle Effects  
 ![playerParticle](https://user-images.githubusercontent.com/53277342/123512514-d6c27600-d6c2-11eb-8358-ce8f11ff852d.gif)
 
-![image](https://user-images.githubusercontent.com/53277342/123512217-2acc5b00-d6c1-11eb-92dd-343a938b6d48.png)
+![image](https://user-images.githubusercontent.com/53277342/123513264-2d31b380-d6c7-11eb-9990-619b2e85af4a.png)
 
 ![image](https://user-images.githubusercontent.com/53277342/123512223-3750b380-d6c1-11eb-9e9b-b590ba921769.png)
 
@@ -57,9 +57,9 @@ https://assetstore.unity.com/packages/3d/vegetation/plants/yughues-free-bushes-1
 ## Navigation Area  
 ![image](https://user-images.githubusercontent.com/53277342/123512737-20f82700-d6c4-11eb-99bd-38d134142b52.png)
 
-![image](https://user-images.githubusercontent.com/53277342/123512488-ba263e00-d6c2-11eb-9aa6-8f9c2778d309.png)
+![image](https://user-images.githubusercontent.com/53277342/123513274-3de22980-d6c7-11eb-9d19-f1cbab7e85ac.png)
 
 ## Camera Control  
 ![cam](https://user-images.githubusercontent.com/53277342/123512563-17ba8a80-d6c3-11eb-8a9e-7f261afa6d6f.gif)
 
-![image](https://user-images.githubusercontent.com/53277342/123512777-5270f280-d6c4-11eb-9381-fdf76f239d1f.png)
+![image](https://user-images.githubusercontent.com/53277342/123513282-4d617280-d6c7-11eb-9bd9-6528a22ec0b4.png)
