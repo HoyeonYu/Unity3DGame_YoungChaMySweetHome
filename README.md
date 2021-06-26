@@ -46,12 +46,12 @@ https://assetstore.unity.com/packages/3d/vegetation/plants/yughues-free-bushes-1
 
 ![image](https://user-images.githubusercontent.com/53277342/123512223-3750b380-d6c1-11eb-9e9b-b590ba921769.png)
 
-## Coin Logic  
+## Coin Price Logic  
 ![bank](https://user-images.githubusercontent.com/53277342/123512534-f194ea80-d6c2-11eb-8734-01c497f0fa5e.gif)
 
 ![image](https://user-images.githubusercontent.com/53277342/123512230-4172b200-d6c1-11eb-82f3-bcb8d9933d05.png)
 
-## Player Logic  
+## Player Movement Logic  
 ![playerLogic](https://user-images.githubusercontent.com/53277342/123512548-02456080-d6c3-11eb-9cb2-80f31cf74f01.gif)
 
 ## Navigation Area  
