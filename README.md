@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/53277342/122690108-81b9d680-d262-11eb-
 
 ![image](https://user-images.githubusercontent.com/53277342/123512650-8dbef180-d6c3-11eb-875c-6faa1c9fa5f2.png)
 
-![image](https://user-images.githubusercontent.com/53277342/123512995-84368900-d6c5-11eb-89c0-92c977041d7d.png)
+![image](https://user-images.githubusercontent.com/53277342/123513015-9ca6a380-d6c5-11eb-9215-576b49658be6.png)
 
 Links
 1. POLYGON city pack (무료)  
