@@ -25,50 +25,41 @@ https://assetstore.unity.com/packages/3d/vegetation/plants/yughues-free-bushes-1
 
 ![image](https://user-images.githubusercontent.com/53277342/123512206-14be9a80-d6c1-11eb-85a8-5ebf33cf77dc.png)
 
-<Car Physics>
- 
+Car Physics  
 ![car](https://user-images.githubusercontent.com/53277342/123512387-19d01980-d6c2-11eb-91ab-146f7fa94635.gif)
 
-<Player Physics>
- 
+Player Physics  
 ![player](https://user-images.githubusercontent.com/53277342/123512390-205e9100-d6c2-11eb-8e8c-74ad634582ce.gif)
 
-<Building Sign Physics>
- 
+Building Sign Physics  
 ![ezgif com-video-to-gif](https://user-images.githubusercontent.com/53277342/123512369-fc02b480-d6c1-11eb-9093-04aa97256557.gif)
 
 ![image](https://user-images.githubusercontent.com/53277342/123512211-1f792f80-d6c1-11eb-8b11-8dae272fe914.png)
 
-<Car Particle Effects>
- 
+Car Particle Effects  
 ![carParticle](https://user-images.githubusercontent.com/53277342/123512513-d4f8b280-d6c2-11eb-952b-2c8b3b6cb6ca.gif)
 
-<Player Particle Effects>
- 
+Player Particle Effects  
 ![playerParticle](https://user-images.githubusercontent.com/53277342/123512514-d6c27600-d6c2-11eb-8358-ce8f11ff852d.gif)
 
 ![image](https://user-images.githubusercontent.com/53277342/123512217-2acc5b00-d6c1-11eb-92dd-343a938b6d48.png)
 
 ![image](https://user-images.githubusercontent.com/53277342/123512223-3750b380-d6c1-11eb-9e9b-b590ba921769.png)
 
-<Coin Logic>
- 
+Coin Logic  
 ![bank](https://user-images.githubusercontent.com/53277342/123512534-f194ea80-d6c2-11eb-8734-01c497f0fa5e.gif)
 
 ![image](https://user-images.githubusercontent.com/53277342/123512230-4172b200-d6c1-11eb-82f3-bcb8d9933d05.png)
 
-<Player Logic>
- 
+Player Logic  
 ![playerLogic](https://user-images.githubusercontent.com/53277342/123512548-02456080-d6c3-11eb-9cb2-80f31cf74f01.gif)
 
-<Navigation Area>
- 
+Navigation Area  
 ![image](https://user-images.githubusercontent.com/53277342/123512737-20f82700-d6c4-11eb-99bd-38d134142b52.png)
 
 ![image](https://user-images.githubusercontent.com/53277342/123512488-ba263e00-d6c2-11eb-9aa6-8f9c2778d309.png)
 
-<Camera Control>
-
+Camera Control  
 ![cam](https://user-images.githubusercontent.com/53277342/123512563-17ba8a80-d6c3-11eb-8a9e-7f261afa6d6f.gif)
 
 ![image](https://user-images.githubusercontent.com/53277342/123512777-5270f280-d6c4-11eb-9381-fdf76f239d1f.png)
