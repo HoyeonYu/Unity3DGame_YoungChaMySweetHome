@@ -3,7 +3,7 @@
 https://user-images.githubusercontent.com/53277342/122690108-81b9d680-d262-11eb-855e-7a84ff359f9f.mp4
 
 ## Game Download
-Download File Below -> Unzip File -> Execute "YoungCha_MySweetHome.exe" 
+Download File by Google Drive Link Below -> Unzip File -> Execute "YoungCha_MySweetHome.exe" 
 https://drive.google.com/file/d/1bNudw8NbuaZxES2q3aig_43BYvEFPNTo/view?usp=sharing  
 ![image](https://user-images.githubusercontent.com/53277342/123524878-119acd00-d708-11eb-85bb-c66927819d58.png)
 
