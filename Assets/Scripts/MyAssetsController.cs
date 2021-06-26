@@ -12,7 +12,7 @@ public class MyAssetsController : MonoBehaviour
 
     void Start()
     {
-        cash = 5000000;
+        cash = 1000000;
         coin = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         myAssetsFoldText = GameObject.Find("MyAssetsFoldTxt");

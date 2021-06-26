@@ -115,9 +115,14 @@ public class GameDirector : MonoBehaviour
         if (MyHealthController.isGameEnd)
         {
             MyAssetsCanvasFold.SetActive(false);
+            MyAssetsCanvasFold.SetActive(false);
             MyAssetsCanvasFull.SetActive(false);
             MyHealthCanvas.SetActive(false);
+            BankCanvas.SetActive(false);
+            SuperMarketCanvas.SetActive(false);
+            HospitalCanvas.SetActive(false);
             GameOverCanvas.SetActive(true);
+
             isPlayerFixed = true;
 
             if (!isGameDone)
@@ -133,7 +138,11 @@ public class GameDirector : MonoBehaviour
             MyAssetsCanvasFold.SetActive(false);
             MyAssetsCanvasFull.SetActive(false);
             MyHealthCanvas.SetActive(false);
+            BankCanvas.SetActive(false);
+            SuperMarketCanvas.SetActive(false);
+            HospitalCanvas.SetActive(false);
             GameSuccessCanvas.SetActive(true);
+
             isPlayerFixed = true;
 
             if (!isGameDone)

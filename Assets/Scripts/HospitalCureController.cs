@@ -38,15 +38,26 @@ public class HospitalCureController : MonoBehaviour
             if (i == 0)
             {
                 hospitalInfoTxt.GetComponent<Text>().text += "   ";
+
+                hospitalInfoTxt.GetComponent<Text>().text += cureHurtValue[i].ToString().PadRight(20, ' ')
+                    + curePrice[i] + "원\n";
             }
 
-            else if (i == 2)
+            else if (i == 1)
+            {
+                hospitalInfoTxt.GetComponent<Text>().text += " ";
+
+                hospitalInfoTxt.GetComponent<Text>().text += cureHurtValue[i].ToString().PadRight(20, ' ')
+                    + curePrice[i] + "원\n";
+            }
+
+            else
             {
                 hospitalInfoTxt.GetComponent<Text>().text += "      ";
-            }
 
-            hospitalInfoTxt.GetComponent<Text>().text += cureHurtValue[i].ToString().PadRight(20, ' ') 
-                + curePrice[i] + "원\n";
+                hospitalInfoTxt.GetComponent<Text>().text += cureHurtValue[i].ToString().PadRight(19, ' ')
+                    + curePrice[i] + "원\n";
+            }
         }
     }
 
